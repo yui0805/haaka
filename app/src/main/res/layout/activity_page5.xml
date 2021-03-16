@@ -96,7 +96,6 @@
             android:id="@+id/event_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button"
             android:textColor="#000000"
             app:backgroundTint="#0000" />
 
@@ -147,7 +146,6 @@
             android:id="@+id/plan_1"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Button"
             android:textColor="#000000"
             app:backgroundTint="#0000" />
 
