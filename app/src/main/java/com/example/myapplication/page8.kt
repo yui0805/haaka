@@ -3,9 +3,7 @@ package com.example.myapplication
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_page5.*
-import kotlinx.android.synthetic.main.activity_page6.*
-import kotlinx.android.synthetic.main.activity_page6.textView7
+import kotlinx.android.synthetic.main.activity_page6.textView_title
 import kotlinx.android.synthetic.main.activity_page8.*
 import org.json.JSONException
 import org.json.JSONObject
@@ -125,7 +123,7 @@ class page8 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            //extView.text = result
+            textView_title.text = result
         }
     }
 
@@ -168,7 +166,7 @@ class page8 : AppCompatActivity() {
                 //JSONObjectを使って、まず全体のJSONObjectを取ります。
                 val parentJsonObj = JSONObject(jsonText)
                 //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
-                val parentJsonArray = parentJsonObj.getJSONArray("date")
+                val parentJsonArray = parentJsonObj.getJSONArray("data")
 
                 //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
                 val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
@@ -207,7 +205,7 @@ class page8 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            textView7.text = result
+            place_view.text = result
         }
     }
 
@@ -295,7 +293,7 @@ class page8 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            place_view.text = result
+            kyoka_view.text = result
         }
     }
 

@@ -126,19 +126,18 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        button14.setOnClickListener {
+        button15.setOnClickListener {
             val intent = Intent(this@MainActivity, memotest::class.java)
             startActivity(intent)
         }
 
-<<<<<<< HEAD
         button13.setOnClickListener {
             val intent = Intent(this@MainActivity, page8::class.java)
             intent.putExtra("date", day)
             startActivity(intent)
         }
-=======
-        button14.setOnClickListener {
+
+        button16.setOnClickListener {
             val intent = Intent(this@MainActivity,page2::class.java)
 
             startActivity(intent)
@@ -146,6 +145,5 @@ class MainActivity : AppCompatActivity() {
 
 
 
->>>>>>> f1f7145530b10fe823a8c152174991a7005b97c0
     }
 }
