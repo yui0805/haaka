@@ -117,20 +117,24 @@ class MainActivity : AppCompatActivity() {
 
 
         button6.setOnClickListener {
-            val intent = Intent(this@MainActivity,page5::class.java)
+            val intent = Intent(this@MainActivity, page5::class.java)
             startActivity(intent)
         }
 
         button.setOnClickListener {
-            val intent = Intent(this@MainActivity,page6::class.java)
+            val intent = Intent(this@MainActivity, page6::class.java)
+            startActivity(intent)
+        }
+
+        button14.setOnClickListener {
+            val intent = Intent(this@MainActivity, memotest::class.java)
             startActivity(intent)
         }
 
         button13.setOnClickListener {
-            val intent = Intent(this@MainActivity,page8::class.java)
-            intent.putExtra("date",day)
+            val intent = Intent(this@MainActivity, page8::class.java)
+            intent.putExtra("date", day)
             startActivity(intent)
         }
-
     }
 }
