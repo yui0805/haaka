@@ -151,15 +151,14 @@ class page6 : AppCompatActivity() {
                 //JSONObjectを使って、まず全体のJSONObjectを取ります。
                 val parentJsonObj = JSONObject(jsonText)
                 //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
-                val parentJsonArray = parentJsonObj.getJSONArray("movies")
+                val parentJsonArray = parentJsonObj.getJSONArray("date")
 
                 //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
                 val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
 
                 //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
-                val movieName: String = detailJsonObj.getString("title")  // => Your Name.
-                //公開年を取りたい時も同じようにすれば良いです。
-                val year: Int = detailJsonObj.getInt("year")  // => 2016
+                val movieName: String = detailJsonObj.getString("PLACE")  // => Your Name.
+
 
                 //Stringでreturnしてあげましょう。
                 return "$movieName"  // => Your Name. - 2016

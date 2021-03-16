@@ -21,13 +21,29 @@ class page8 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page8)
 
+        val bundle = intent.extras
+        val date_data: String? = bundle?.getString("date")
+
+        val str_url: String? = date_data
+
+
 
         //ボタンがクリックされたらAPIを叩く。
-        HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/mercy3")
-        HitAPITask2().execute("https://beginners-hack-demo2.herokuapp.com/mercy3")
-        HitAPITask3().execute("https://beginners-hack-demo2.herokuapp.com/mercy3")
-        HitAPITask4().execute("https://beginners-hack-demo2.herokuapp.com/mercy3")
-        HitAPITask5().execute("https://beginners-hack-demo2.herokuapp.com/mercy3")
+        /*
+        HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/" + str_url)
+        HitAPITask2().execute("https://beginners-hack-demo2.herokuapp.com/" + str_url)
+        HitAPITask3().execute("https://beginners-hack-demo2.herokuapp.com/" +str_url)
+        HitAPITask4().execute("https://beginners-hack-demo2.herokuapp.com/" +str_url)
+        HitAPITask5().execute("https://beginners-hack-demo2.herokuapp.com/" +str_url)
+        */
+
+        HitAPITask().execute("https://jsondata.okiba.me/v1/json/zHEKx210316132619")
+        HitAPITask2().execute("https://jsondata.okiba.me/v1/json/zHEKx210316132619")
+        HitAPITask3().execute("https://jsondata.okiba.me/v1/json/zHEKx210316132619")
+        HitAPITask4().execute("https://jsondata.okiba.me/v1/json/zHEKx210316132619")
+        HitAPITask5().execute("https://jsondata.okiba.me/v1/json/zHEKx210316132619")
+
+
 
     }
 
@@ -70,18 +86,17 @@ class page8 : AppCompatActivity() {
                 //JSONObjectを使って、まず全体のJSONObjectを取ります。
                 val parentJsonObj = JSONObject(jsonText)
                 //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
-                val parentJsonArray = parentJsonObj.getJSONArray("movies")
+                val parentJsonArray = parentJsonObj.getJSONArray("data")
 
                 //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
                 val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
 
                 //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
-                val movieName: String = detailJsonObj.getString("title")  // => Your Name.
-                //公開年を取りたい時も同じようにすれば良いです。
-                val year: Int = detailJsonObj.getInt("year")  // => 2016
+                val movieName: String = detailJsonObj.getString("TITLE")  // => Your Name.
+
 
                 //Stringでreturnしてあげましょう。
-                return "$year"  // => Your Name. - 2016
+                return "$movieName"  // => Your Name. - 2016
 
                 //ここから下は、接続エラーとかJSONのエラーとかで失敗した時にエラーを処理する為のものです。
             } catch (e: MalformedURLException) {
@@ -110,7 +125,7 @@ class page8 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            kyoka_view.text = result
+            //extView.text = result
         }
     }
 
@@ -153,15 +168,14 @@ class page8 : AppCompatActivity() {
                 //JSONObjectを使って、まず全体のJSONObjectを取ります。
                 val parentJsonObj = JSONObject(jsonText)
                 //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
-                val parentJsonArray = parentJsonObj.getJSONArray("movies")
+                val parentJsonArray = parentJsonObj.getJSONArray("date")
 
                 //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
                 val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
 
                 //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
-                val movieName: String = detailJsonObj.getString("title")  // => Your Name.
-                //公開年を取りたい時も同じようにすれば良いです。
-                val year: Int = detailJsonObj.getInt("year")  // => 2016
+                val movieName: String = detailJsonObj.getString("PLACE")  // => Your Name.
+
 
                 //Stringでreturnしてあげましょう。
                 return "$movieName"  // => Your Name. - 2016
@@ -238,18 +252,21 @@ class page8 : AppCompatActivity() {
                 //JSONObjectを使って、まず全体のJSONObjectを取ります。
                 val parentJsonObj = JSONObject(jsonText)
                 //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
-                val parentJsonArray = parentJsonObj.getJSONArray("movies")
+                val parentJsonArray = parentJsonObj.getJSONArray("data")
 
                 //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
                 val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
 
-                //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
-                val movieName: String = detailJsonObj.getString("title")  // => Your Name.
-                //公開年を取りたい時も同じようにすれば良いです。
-                val year: Int = detailJsonObj.getInt("year")  // => 2016
+
+                val movieName: String = detailJsonObj.getString("DATE")
+                val movieName2: String = detailJsonObj.getString("DAY")
+                val movieName3: String = detailJsonObj.getString("FROM_TIME")
+                val movieName4: String = detailJsonObj.getString("END_TIME")
+
+
 
                 //Stringでreturnしてあげましょう。
-                return "$movieName"  // => Your Name. - 2016
+                return "$movieName $movieName2 $movieName3 ~ $movieName4"  // => Your Name. - 2016
 
                 //ここから下は、接続エラーとかJSONのエラーとかで失敗した時にエラーを処理する為のものです。
             } catch (e: MalformedURLException) {
@@ -321,15 +338,14 @@ class page8 : AppCompatActivity() {
                 //JSONObjectを使って、まず全体のJSONObjectを取ります。
                 val parentJsonObj = JSONObject(jsonText)
                 //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
-                val parentJsonArray = parentJsonObj.getJSONArray("movies")
+                val parentJsonArray = parentJsonObj.getJSONArray("data")
 
                 //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
                 val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
 
                 //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
-                val movieName: String = detailJsonObj.getString("title")  // => Your Name.
-                //公開年を取りたい時も同じようにすれば良いです。
-                val year: Int = detailJsonObj.getInt("year")  // => 2016
+                val movieName: String = detailJsonObj.getString("MEMO")  // => Your Name.
+
 
                 //Stringでreturnしてあげましょう。
                 return "$movieName"  // => Your Name. - 2016
@@ -361,7 +377,7 @@ class page8 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            place_view.text = result
+            //place_view.text = result
         }
     }
 
@@ -404,15 +420,13 @@ class page8 : AppCompatActivity() {
                 //JSONObjectを使って、まず全体のJSONObjectを取ります。
                 val parentJsonObj = JSONObject(jsonText)
                 //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
-                val parentJsonArray = parentJsonObj.getJSONArray("movies")
+                val parentJsonArray = parentJsonObj.getJSONArray("data")
 
                 //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
                 val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
 
                 //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
-                val movieName: String = detailJsonObj.getString("title")  // => Your Name.
-                //公開年を取りたい時も同じようにすれば良いです。
-                val year: Int = detailJsonObj.getInt("year")  // => 2016
+                val movieName: String = detailJsonObj.getString("URL")  // => Your Name.
 
                 //Stringでreturnしてあげましょう。
                 return "$movieName"  // => Your Name. - 2016
