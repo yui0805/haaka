@@ -131,10 +131,21 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+<<<<<<< HEAD
         button13.setOnClickListener {
             val intent = Intent(this@MainActivity, page8::class.java)
             intent.putExtra("date", day)
             startActivity(intent)
         }
+=======
+        button14.setOnClickListener {
+            val intent = Intent(this@MainActivity,page2::class.java)
+
+            startActivity(intent)
+        }
+
+
+
+>>>>>>> f1f7145530b10fe823a8c152174991a7005b97c0
     }
 }

@@ -18,9 +18,16 @@ class page5 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page5)
 
+        val bundle = intent.extras
+        //date_page5　の中身　2021/2/10
+        val date_page5: String? = bundle?.getString("date_page2")
+        toolbar.title=date_page5
+
+
+
                     button11.setOnClickListener {
                         //ボタンがクリックされたらAPIを叩く。
-                        HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/mercy3")
+                        HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
                     }
             }
 
