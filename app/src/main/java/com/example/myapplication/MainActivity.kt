@@ -147,7 +147,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         button15.setOnClickListener {
-            val intent = Intent(this@MainActivity, memotest::class.java)
+            val intent = Intent(this@MainActivity, page3::class.java)
             startActivity(intent)
         }
 
