@@ -44,7 +44,7 @@ class page5 : AppCompatActivity() {
 
 
                         //ボタンがクリックされたらAPIを叩く。
-        HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/17/a/EVENT")
+        HitAPITask().execute("" + URL_1)
         HitAPITask2().execute(""+URL_2)
         HitAPITask3().execute(""+URL_3)
         HitAPITask4().execute(""+URL_4)
