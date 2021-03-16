@@ -3,7 +3,6 @@ package com.example.myapplication
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import kotlinx.android.synthetic.main.activity_page5.*
 import kotlinx.android.synthetic.main.activity_page6.*
 import org.json.JSONException
@@ -11,11 +10,9 @@ import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
-import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
 import java.net.MalformedURLException
 import java.net.URL
-import java.net.URLEncoder
 
 class page6 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -190,7 +187,7 @@ class page6 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            textView7.text = result
+            textView_title.text = result
         }
     }
 
