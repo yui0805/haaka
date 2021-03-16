@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -25,10 +26,102 @@ class page5 : AppCompatActivity() {
 
 
 
-                    button11.setOnClickListener {
+        val URL = "https://beginners-hack-demo2.herokuapp.com/" + date_page5
+
+        val URL_1 = URL +"/a"+"/EVENT"
+        val URL_2 = URL +"/b"+"/EVENT"
+        val URL_3 = URL +"/c"+"/EVENT"
+        val URL_4 = URL +"/d"+"/EVENT"
+        val URL_5 = URL +"/e"+"/EVENT"
+
+        val URL_6 = URL +"/a"+"/TASK"
+        val URL_7 = URL +"/b"+"/TASK"
+        val URL_8 = URL +"/c"+"/TASK"
+        val URL_9 = URL +"/d"+"/TASK"
+        val URL_10 = URL +"/e"+"/TASK"
+
+
+
                         //ボタンがクリックされたらAPIを叩く。
-                        HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
-                    }
+//        HitAPITask().execute(""+URL)
+//        HitAPITask2().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
+//        HitAPITask3().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
+//        HitAPITask4().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
+//        HitAPITask5().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
+//        HitAPITask6().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
+//        HitAPITask7().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
+//        HitAPITask8().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
+//        HitAPITask9().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
+//        HitAPITask10().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
+
+        /*
+        event_1.setOnClickListener{
+            intent = Intent(this@page5,page8::class.java)
+            intent.putExtra("date", URL_1)
+            startActivity(intent)
+
+        }
+        event_2.setOnClickListener{
+            intent = Intent(this@page5,page8::class.java)
+            intent.putExtra("date", URL_2)
+            startActivity(intent)
+
+        }
+        event_3.setOnClickListener{
+            intent = Intent(this@page5,page8::class.java)
+            intent.putExtra("date", URL_3)
+            startActivity(intent)
+        }
+        event_4.setOnClickListener{
+            intent = Intent(this@page5,page8::class.java)
+            intent.putExtra("date", URL_4)
+            startActivity(intent)
+        }
+        event_5.setOnClickListener{
+            intent = Intent(this@page5,page8::class.java)
+            intent.putExtra("date", URL_5)
+            startActivity(intent)
+        }
+        add_plan.setOnClickListener{
+
+        }
+
+        plan_1.setOnClickListener{
+            intent = Intent(this@page5,page8::class.java)
+            intent.putExtra("date", URL_6)
+            startActivity(intent)
+        }
+        plan_2.setOnClickListener{
+            intent = Intent(this@page5,page8::class.java)
+            intent.putExtra("date", URL_7)
+            startActivity(intent)
+        }
+        plan_3.setOnClickListener{
+            intent = Intent(this@page5,page8::class.java)
+            intent.putExtra("date", URL_8)
+            startActivity(intent)
+        }
+        plan_4.setOnClickListener{
+            intent = Intent(this@page5,page8::class.java)
+            intent.putExtra("date", URL_9)
+            startActivity(intent)
+        }
+        plan_5.setOnClickListener{
+            intent = Intent(this@page5,page8::class.java)
+            intent.putExtra("date", URL_10)
+            startActivity(intent)
+        }
+        add_task{
+
+        }
+
+
+
+
+
+
+
+
             }
 
             inner class HitAPITask : AsyncTask<String, String, String>() {
@@ -70,18 +163,16 @@ class page5 : AppCompatActivity() {
                         //JSONObjectを使って、まず全体のJSONObjectを取ります。
                         val parentJsonObj = JSONObject(jsonText)
                         //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
-                        val parentJsonArray = parentJsonObj.getJSONArray("movies")
+                        val parentJsonArray = parentJsonObj.getJSONArray("data")
 
                         //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
                         val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
 
                         //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
-                        val movieName: String = detailJsonObj.getString("title")  // => Your Name.
-                        //公開年を取りたい時も同じようにすれば良いです。
-                        val year: Int = detailJsonObj.getInt("year")  // => 2016
+                        val movieName: String = detailJsonObj.getString("TITLW")  // => Your Name.
 
                         //Stringでreturnしてあげましょう。
-                        return "$movieName - $year"  // => Your Name. - 2016
+                        return "$movieName"
 
                         //ここから下は、接続エラーとかJSONのエラーとかで失敗した時にエラーを処理する為のものです。
                     } catch (e: MalformedURLException) {
@@ -110,10 +201,757 @@ class page5 : AppCompatActivity() {
                     super.onPostExecute(result)
                     if (result == null) return
 
-                    textView5.text = result
+                    event_1.text = result
                 }
             }
 
+    inner class HitAPITask2 : AsyncTask<String, String, String>() {
 
+        override fun doInBackground(vararg params: String?): String? {
+            //ここでAPIを叩きます。バックグラウンドで処理する内容です。
+            var connection: HttpURLConnection? = null
+            var reader: BufferedReader? = null
+            val buffer: StringBuffer
+
+            try {
+                //param[0]にはAPIのURI(String)を入れます(後ほど)。
+                //AsynkTask<...>の一つめがStringな理由はURIをStringで指定するからです。
+                val url = URL(params[0])
+                connection = url.openConnection() as HttpURLConnection
+                connection.connect()  //ここで指定したAPIを叩いてみてます。
+
+                //ここから叩いたAPIから帰ってきたデータを使えるよう処理していきます。
+
+                //とりあえず取得した文字をbufferに。
+                val stream = connection.inputStream
+                reader = BufferedReader(InputStreamReader(stream))
+                buffer = StringBuffer()
+                var line: String?
+                while (true) {
+                    line = reader.readLine()
+                    if (line == null) {
+                        break
+                    }
+                    buffer.append(line)
+                    //Log.d("CHECK", buffer.toString())
+                }
+
+                //ここからは、今回はJSONなので、いわゆるJsonをParseする作業（Jsonの中の一つ一つのデータを取るような感じ）をしていきます。
+
+                //先ほどbufferに入れた、取得した文字列
+                val jsonText = buffer.toString()
+
+                //JSONObjectを使って、まず全体のJSONObjectを取ります。
+                val parentJsonObj = JSONObject(jsonText)
+                //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
+                val parentJsonArray = parentJsonObj.getJSONArray("data")
+
+                //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
+                val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
+
+                //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
+                val movieName: String = detailJsonObj.getString("TITLE")  // => Your Name.
+
+                //Stringでreturnしてあげましょう。
+                return "$movieName"  // => Your Name. - 2016
+
+                //ここから下は、接続エラーとかJSONのエラーとかで失敗した時にエラーを処理する為のものです。
+            } catch (e: MalformedURLException) {
+                e.printStackTrace()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+            //finallyで接続を切断してあげましょう。
+            finally {
+                connection?.disconnect()
+                try {
+                    reader?.close()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+            }
+            //失敗した時はnullやエラーコードなどを返しましょう。
+            return null
         }
+
+
+        //返ってきたデータをビューに反映させる処理はonPostExecuteに書きます。これはメインスレッドです。
+        override fun onPostExecute(result: String?) {
+            super.onPostExecute(result)
+            if (result == null) return
+
+            event_2.text = result
+        }
+    }
+
+    inner class HitAPITask3 : AsyncTask<String, String, String>() {
+
+        override fun doInBackground(vararg params: String?): String? {
+            //ここでAPIを叩きます。バックグラウンドで処理する内容です。
+            var connection: HttpURLConnection? = null
+            var reader: BufferedReader? = null
+            val buffer: StringBuffer
+
+            try {
+                //param[0]にはAPIのURI(String)を入れます(後ほど)。
+                //AsynkTask<...>の一つめがStringな理由はURIをStringで指定するからです。
+                val url = URL(params[0])
+                connection = url.openConnection() as HttpURLConnection
+                connection.connect()  //ここで指定したAPIを叩いてみてます。
+
+                //ここから叩いたAPIから帰ってきたデータを使えるよう処理していきます。
+
+                //とりあえず取得した文字をbufferに。
+                val stream = connection.inputStream
+                reader = BufferedReader(InputStreamReader(stream))
+                buffer = StringBuffer()
+                var line: String?
+                while (true) {
+                    line = reader.readLine()
+                    if (line == null) {
+                        break
+                    }
+                    buffer.append(line)
+                    //Log.d("CHECK", buffer.toString())
+                }
+
+                //ここからは、今回はJSONなので、いわゆるJsonをParseする作業（Jsonの中の一つ一つのデータを取るような感じ）をしていきます。
+
+                //先ほどbufferに入れた、取得した文字列
+                val jsonText = buffer.toString()
+
+                //JSONObjectを使って、まず全体のJSONObjectを取ります。
+                val parentJsonObj = JSONObject(jsonText)
+                //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
+                val parentJsonArray = parentJsonObj.getJSONArray("data")
+
+                //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
+                val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
+
+                //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
+                val movieName: String = detailJsonObj.getString("TITLE")  // => Your Name.
+
+                //Stringでreturnしてあげましょう。
+                return "$movieName"  // => Your Name. - 2016
+
+                //ここから下は、接続エラーとかJSONのエラーとかで失敗した時にエラーを処理する為のものです。
+            } catch (e: MalformedURLException) {
+                e.printStackTrace()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+            //finallyで接続を切断してあげましょう。
+            finally {
+                connection?.disconnect()
+                try {
+                    reader?.close()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+            }
+            //失敗した時はnullやエラーコードなどを返しましょう。
+            return null
+        }
+
+
+        //返ってきたデータをビューに反映させる処理はonPostExecuteに書きます。これはメインスレッドです。
+        override fun onPostExecute(result: String?) {
+            super.onPostExecute(result)
+            if (result == null) return
+
+            event_3.text = result
+        }
+    }
+
+    inner class HitAPITask4 : AsyncTask<String, String, String>() {
+
+        override fun doInBackground(vararg params: String?): String? {
+            //ここでAPIを叩きます。バックグラウンドで処理する内容です。
+            var connection: HttpURLConnection? = null
+            var reader: BufferedReader? = null
+            val buffer: StringBuffer
+
+            try {
+                //param[0]にはAPIのURI(String)を入れます(後ほど)。
+                //AsynkTask<...>の一つめがStringな理由はURIをStringで指定するからです。
+                val url = URL(params[0])
+                connection = url.openConnection() as HttpURLConnection
+                connection.connect()  //ここで指定したAPIを叩いてみてます。
+
+                //ここから叩いたAPIから帰ってきたデータを使えるよう処理していきます。
+
+                //とりあえず取得した文字をbufferに。
+                val stream = connection.inputStream
+                reader = BufferedReader(InputStreamReader(stream))
+                buffer = StringBuffer()
+                var line: String?
+                while (true) {
+                    line = reader.readLine()
+                    if (line == null) {
+                        break
+                    }
+                    buffer.append(line)
+                    //Log.d("CHECK", buffer.toString())
+                }
+
+                //ここからは、今回はJSONなので、いわゆるJsonをParseする作業（Jsonの中の一つ一つのデータを取るような感じ）をしていきます。
+
+                //先ほどbufferに入れた、取得した文字列
+                val jsonText = buffer.toString()
+
+                //JSONObjectを使って、まず全体のJSONObjectを取ります。
+                val parentJsonObj = JSONObject(jsonText)
+                //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
+                val parentJsonArray = parentJsonObj.getJSONArray("data")
+
+                //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
+                val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
+
+                //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
+                val movieName: String = detailJsonObj.getString("TITLE")  // => Your Name.
+
+                //Stringでreturnしてあげましょう。
+                return "$movieName"  // => Your Name. - 2016
+
+                //ここから下は、接続エラーとかJSONのエラーとかで失敗した時にエラーを処理する為のものです。
+            } catch (e: MalformedURLException) {
+                e.printStackTrace()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+            //finallyで接続を切断してあげましょう。
+            finally {
+                connection?.disconnect()
+                try {
+                    reader?.close()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+            }
+            //失敗した時はnullやエラーコードなどを返しましょう。
+            return null
+        }
+
+
+        //返ってきたデータをビューに反映させる処理はonPostExecuteに書きます。これはメインスレッドです。
+        override fun onPostExecute(result: String?) {
+            super.onPostExecute(result)
+            if (result == null) return
+
+            event_4.text = result
+        }
+    }
+
+    inner class HitAPITask5 : AsyncTask<String, String, String>() {
+
+        override fun doInBackground(vararg params: String?): String? {
+            //ここでAPIを叩きます。バックグラウンドで処理する内容です。
+            var connection: HttpURLConnection? = null
+            var reader: BufferedReader? = null
+            val buffer: StringBuffer
+
+            try {
+                //param[0]にはAPIのURI(String)を入れます(後ほど)。
+                //AsynkTask<...>の一つめがStringな理由はURIをStringで指定するからです。
+                val url = URL(params[0])
+                connection = url.openConnection() as HttpURLConnection
+                connection.connect()  //ここで指定したAPIを叩いてみてます。
+
+                //ここから叩いたAPIから帰ってきたデータを使えるよう処理していきます。
+
+                //とりあえず取得した文字をbufferに。
+                val stream = connection.inputStream
+                reader = BufferedReader(InputStreamReader(stream))
+                buffer = StringBuffer()
+                var line: String?
+                while (true) {
+                    line = reader.readLine()
+                    if (line == null) {
+                        break
+                    }
+                    buffer.append(line)
+                    //Log.d("CHECK", buffer.toString())
+                }
+
+                //ここからは、今回はJSONなので、いわゆるJsonをParseする作業（Jsonの中の一つ一つのデータを取るような感じ）をしていきます。
+
+                //先ほどbufferに入れた、取得した文字列
+                val jsonText = buffer.toString()
+
+                //JSONObjectを使って、まず全体のJSONObjectを取ります。
+                val parentJsonObj = JSONObject(jsonText)
+                //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
+                val parentJsonArray = parentJsonObj.getJSONArray("data")
+
+                //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
+                val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
+
+                //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
+                val movieName: String = detailJsonObj.getString("TITLE")  // => Your Name.
+
+                //Stringでreturnしてあげましょう。
+                return "$movieName"  // => Your Name. - 2016
+
+                //ここから下は、接続エラーとかJSONのエラーとかで失敗した時にエラーを処理する為のものです。
+            } catch (e: MalformedURLException) {
+                e.printStackTrace()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+            //finallyで接続を切断してあげましょう。
+            finally {
+                connection?.disconnect()
+                try {
+                    reader?.close()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+            }
+            //失敗した時はnullやエラーコードなどを返しましょう。
+            return null
+        }
+
+
+        //返ってきたデータをビューに反映させる処理はonPostExecuteに書きます。これはメインスレッドです。
+        override fun onPostExecute(result: String?) {
+            super.onPostExecute(result)
+            if (result == null) return
+
+            event_5.text = result
+        }
+    }
+
+
+
+
+
+
+
+
+
+    inner class HitAPITask6 : AsyncTask<String, String, String>() {
+
+        override fun doInBackground(vararg params: String?): String? {
+            //ここでAPIを叩きます。バックグラウンドで処理する内容です。
+            var connection: HttpURLConnection? = null
+            var reader: BufferedReader? = null
+            val buffer: StringBuffer
+
+            try {
+                //param[0]にはAPIのURI(String)を入れます(後ほど)。
+                //AsynkTask<...>の一つめがStringな理由はURIをStringで指定するからです。
+                val url = URL(params[0])
+                connection = url.openConnection() as HttpURLConnection
+                connection.connect()  //ここで指定したAPIを叩いてみてます。
+
+                //ここから叩いたAPIから帰ってきたデータを使えるよう処理していきます。
+
+                //とりあえず取得した文字をbufferに。
+                val stream = connection.inputStream
+                reader = BufferedReader(InputStreamReader(stream))
+                buffer = StringBuffer()
+                var line: String?
+                while (true) {
+                    line = reader.readLine()
+                    if (line == null) {
+                        break
+                    }
+                    buffer.append(line)
+                    //Log.d("CHECK", buffer.toString())
+                }
+
+                //ここからは、今回はJSONなので、いわゆるJsonをParseする作業（Jsonの中の一つ一つのデータを取るような感じ）をしていきます。
+
+                //先ほどbufferに入れた、取得した文字列
+                val jsonText = buffer.toString()
+
+                //JSONObjectを使って、まず全体のJSONObjectを取ります。
+                val parentJsonObj = JSONObject(jsonText)
+                //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
+                val parentJsonArray = parentJsonObj.getJSONArray("data")
+
+                //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
+                val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
+
+                //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
+                val movieName: String = detailJsonObj.getString("TITLW")  // => Your Name.
+
+                //Stringでreturnしてあげましょう。
+                return "$movieName"
+
+                //ここから下は、接続エラーとかJSONのエラーとかで失敗した時にエラーを処理する為のものです。
+            } catch (e: MalformedURLException) {
+                e.printStackTrace()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+            //finallyで接続を切断してあげましょう。
+            finally {
+                connection?.disconnect()
+                try {
+                    reader?.close()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+            }
+            //失敗した時はnullやエラーコードなどを返しましょう。
+            return null
+        }
+
+
+        //返ってきたデータをビューに反映させる処理はonPostExecuteに書きます。これはメインスレッドです。
+        override fun onPostExecute(result: String?) {
+            super.onPostExecute(result)
+            if (result == null) return
+
+            plan_1.text = result
+        }
+    }
+
+    inner class HitAPITask7 : AsyncTask<String, String, String>() {
+
+        override fun doInBackground(vararg params: String?): String? {
+            //ここでAPIを叩きます。バックグラウンドで処理する内容です。
+            var connection: HttpURLConnection? = null
+            var reader: BufferedReader? = null
+            val buffer: StringBuffer
+
+            try {
+                //param[0]にはAPIのURI(String)を入れます(後ほど)。
+                //AsynkTask<...>の一つめがStringな理由はURIをStringで指定するからです。
+                val url = URL(params[0])
+                connection = url.openConnection() as HttpURLConnection
+                connection.connect()  //ここで指定したAPIを叩いてみてます。
+
+                //ここから叩いたAPIから帰ってきたデータを使えるよう処理していきます。
+
+                //とりあえず取得した文字をbufferに。
+                val stream = connection.inputStream
+                reader = BufferedReader(InputStreamReader(stream))
+                buffer = StringBuffer()
+                var line: String?
+                while (true) {
+                    line = reader.readLine()
+                    if (line == null) {
+                        break
+                    }
+                    buffer.append(line)
+                    //Log.d("CHECK", buffer.toString())
+                }
+
+                //ここからは、今回はJSONなので、いわゆるJsonをParseする作業（Jsonの中の一つ一つのデータを取るような感じ）をしていきます。
+
+                //先ほどbufferに入れた、取得した文字列
+                val jsonText = buffer.toString()
+
+                //JSONObjectを使って、まず全体のJSONObjectを取ります。
+                val parentJsonObj = JSONObject(jsonText)
+                //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
+                val parentJsonArray = parentJsonObj.getJSONArray("data")
+
+                //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
+                val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
+
+                //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
+                val movieName: String = detailJsonObj.getString("TITLE")  // => Your Name.
+
+                //Stringでreturnしてあげましょう。
+                return "$movieName"  // => Your Name. - 2016
+
+                //ここから下は、接続エラーとかJSONのエラーとかで失敗した時にエラーを処理する為のものです。
+            } catch (e: MalformedURLException) {
+                e.printStackTrace()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+            //finallyで接続を切断してあげましょう。
+            finally {
+                connection?.disconnect()
+                try {
+                    reader?.close()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+            }
+            //失敗した時はnullやエラーコードなどを返しましょう。
+            return null
+        }
+
+
+        //返ってきたデータをビューに反映させる処理はonPostExecuteに書きます。これはメインスレッドです。
+        override fun onPostExecute(result: String?) {
+            super.onPostExecute(result)
+            if (result == null) return
+
+            plan_2.text = result
+        }
+    }
+
+    inner class HitAPITask8 : AsyncTask<String, String, String>() {
+
+        override fun doInBackground(vararg params: String?): String? {
+            //ここでAPIを叩きます。バックグラウンドで処理する内容です。
+            var connection: HttpURLConnection? = null
+            var reader: BufferedReader? = null
+            val buffer: StringBuffer
+
+            try {
+                //param[0]にはAPIのURI(String)を入れます(後ほど)。
+                //AsynkTask<...>の一つめがStringな理由はURIをStringで指定するからです。
+                val url = URL(params[0])
+                connection = url.openConnection() as HttpURLConnection
+                connection.connect()  //ここで指定したAPIを叩いてみてます。
+
+                //ここから叩いたAPIから帰ってきたデータを使えるよう処理していきます。
+
+                //とりあえず取得した文字をbufferに。
+                val stream = connection.inputStream
+                reader = BufferedReader(InputStreamReader(stream))
+                buffer = StringBuffer()
+                var line: String?
+                while (true) {
+                    line = reader.readLine()
+                    if (line == null) {
+                        break
+                    }
+                    buffer.append(line)
+                    //Log.d("CHECK", buffer.toString())
+                }
+
+                //ここからは、今回はJSONなので、いわゆるJsonをParseする作業（Jsonの中の一つ一つのデータを取るような感じ）をしていきます。
+
+                //先ほどbufferに入れた、取得した文字列
+                val jsonText = buffer.toString()
+
+                //JSONObjectを使って、まず全体のJSONObjectを取ります。
+                val parentJsonObj = JSONObject(jsonText)
+                //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
+                val parentJsonArray = parentJsonObj.getJSONArray("data")
+
+                //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
+                val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
+
+                //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
+                val movieName: String = detailJsonObj.getString("TITLE")  // => Your Name.
+
+                //Stringでreturnしてあげましょう。
+                return "$movieName"  // => Your Name. - 2016
+
+                //ここから下は、接続エラーとかJSONのエラーとかで失敗した時にエラーを処理する為のものです。
+            } catch (e: MalformedURLException) {
+                e.printStackTrace()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+            //finallyで接続を切断してあげましょう。
+            finally {
+                connection?.disconnect()
+                try {
+                    reader?.close()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+            }
+            //失敗した時はnullやエラーコードなどを返しましょう。
+            return null
+        }
+
+
+        //返ってきたデータをビューに反映させる処理はonPostExecuteに書きます。これはメインスレッドです。
+        override fun onPostExecute(result: String?) {
+            super.onPostExecute(result)
+            if (result == null) return
+
+            plan_3.text = result
+        }
+    }
+
+    inner class HitAPITask9 : AsyncTask<String, String, String>() {
+
+        override fun doInBackground(vararg params: String?): String? {
+            //ここでAPIを叩きます。バックグラウンドで処理する内容です。
+            var connection: HttpURLConnection? = null
+            var reader: BufferedReader? = null
+            val buffer: StringBuffer
+
+            try {
+                //param[0]にはAPIのURI(String)を入れます(後ほど)。
+                //AsynkTask<...>の一つめがStringな理由はURIをStringで指定するからです。
+                val url = URL(params[0])
+                connection = url.openConnection() as HttpURLConnection
+                connection.connect()  //ここで指定したAPIを叩いてみてます。
+
+                //ここから叩いたAPIから帰ってきたデータを使えるよう処理していきます。
+
+                //とりあえず取得した文字をbufferに。
+                val stream = connection.inputStream
+                reader = BufferedReader(InputStreamReader(stream))
+                buffer = StringBuffer()
+                var line: String?
+                while (true) {
+                    line = reader.readLine()
+                    if (line == null) {
+                        break
+                    }
+                    buffer.append(line)
+                    //Log.d("CHECK", buffer.toString())
+                }
+
+                //ここからは、今回はJSONなので、いわゆるJsonをParseする作業（Jsonの中の一つ一つのデータを取るような感じ）をしていきます。
+
+                //先ほどbufferに入れた、取得した文字列
+                val jsonText = buffer.toString()
+
+                //JSONObjectを使って、まず全体のJSONObjectを取ります。
+                val parentJsonObj = JSONObject(jsonText)
+                //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
+                val parentJsonArray = parentJsonObj.getJSONArray("data")
+
+                //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
+                val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
+
+                //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
+                val movieName: String = detailJsonObj.getString("TITLE")  // => Your Name.
+
+                //Stringでreturnしてあげましょう。
+                return "$movieName"  // => Your Name. - 2016
+
+                //ここから下は、接続エラーとかJSONのエラーとかで失敗した時にエラーを処理する為のものです。
+            } catch (e: MalformedURLException) {
+                e.printStackTrace()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+            //finallyで接続を切断してあげましょう。
+            finally {
+                connection?.disconnect()
+                try {
+                    reader?.close()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+            }
+            //失敗した時はnullやエラーコードなどを返しましょう。
+            return null
+        }
+
+
+        //返ってきたデータをビューに反映させる処理はonPostExecuteに書きます。これはメインスレッドです。
+        override fun onPostExecute(result: String?) {
+            super.onPostExecute(result)
+            if (result == null) return
+
+            plan_4.text = result
+        }
+    }
+
+    inner class HitAPITask10 : AsyncTask<String, String, String>() {
+
+        override fun doInBackground(vararg params: String?): String? {
+            //ここでAPIを叩きます。バックグラウンドで処理する内容です。
+            var connection: HttpURLConnection? = null
+            var reader: BufferedReader? = null
+            val buffer: StringBuffer
+
+            try {
+                //param[0]にはAPIのURI(String)を入れます(後ほど)。
+                //AsynkTask<...>の一つめがStringな理由はURIをStringで指定するからです。
+                val url = URL(params[0])
+                connection = url.openConnection() as HttpURLConnection
+                connection.connect()  //ここで指定したAPIを叩いてみてます。
+
+                //ここから叩いたAPIから帰ってきたデータを使えるよう処理していきます。
+
+                //とりあえず取得した文字をbufferに。
+                val stream = connection.inputStream
+                reader = BufferedReader(InputStreamReader(stream))
+                buffer = StringBuffer()
+                var line: String?
+                while (true) {
+                    line = reader.readLine()
+                    if (line == null) {
+                        break
+                    }
+                    buffer.append(line)
+                    //Log.d("CHECK", buffer.toString())
+                }
+
+                //ここからは、今回はJSONなので、いわゆるJsonをParseする作業（Jsonの中の一つ一つのデータを取るような感じ）をしていきます。
+
+                //先ほどbufferに入れた、取得した文字列
+                val jsonText = buffer.toString()
+
+                //JSONObjectを使って、まず全体のJSONObjectを取ります。
+                val parentJsonObj = JSONObject(jsonText)
+                //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
+                val parentJsonArray = parentJsonObj.getJSONArray("data")
+
+                //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
+                val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
+
+                //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
+                val movieName: String = detailJsonObj.getString("TITLE")  // => Your Name.
+
+                //Stringでreturnしてあげましょう。
+                return "$movieName"  // => Your Name. - 2016
+
+                //ここから下は、接続エラーとかJSONのエラーとかで失敗した時にエラーを処理する為のものです。
+            } catch (e: MalformedURLException) {
+                e.printStackTrace()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+            //finallyで接続を切断してあげましょう。
+            finally {
+                connection?.disconnect()
+                try {
+                    reader?.close()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+            }
+            //失敗した時はnullやエラーコードなどを返しましょう。
+            return null
+        }
+
+
+        //返ってきたデータをビューに反映させる処理はonPostExecuteに書きます。これはメインスレッドです。
+        override fun onPostExecute(result: String?) {
+            super.onPostExecute(result)
+            if (result == null) return
+
+            plan_5.text = result
+        }
+
+         */
+    }
+
+
+
+
+
+
+
+
+
+
+}
 
