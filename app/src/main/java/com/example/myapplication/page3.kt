@@ -35,12 +35,12 @@ class page3 : AppCompatActivity() {
         HitAPITask7().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + "19" +"/a/TASK")
         HitAPITask8().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + "19" +"/a/TASK")
         HitAPITask9().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + "19" +"/a/TASK")
-        HitAPITask10().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + "20" +"/a/TASK")
-        HitAPITask11().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + "20" +"/a/TASK")
-        HitAPITask12().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + "20" +"/a/TASK")
-        HitAPITask13().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + "21" +"/a/TASK")
-        HitAPITask14().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + "21" +"/a/TASK")
-        HitAPITask15().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + "21" +"/a/TASK")
+        HitAPITask10().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + "23" +"/a/TASK")
+        HitAPITask11().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + "23" +"/a/TASK")
+        HitAPITask12().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + "23" +"/a/TASK")
+        HitAPITask13().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + "24" +"/a/TASK")
+        HitAPITask14().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + "24" +"/a/TASK")
+        HitAPITask15().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + "24" +"/a/TASK")
 
     }
 
