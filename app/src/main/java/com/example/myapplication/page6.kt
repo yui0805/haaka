@@ -25,10 +25,12 @@ class page6 : AppCompatActivity() {
 
 
             //ボタンがクリックされたらAPIを叩く。
-            HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/mercy3")
-            HitAPITask2().execute("https://beginners-hack-demo2.herokuapp.com/mercy3")
+//            HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/mercy3")
+//            HitAPITask2().execute("https://beginners-hack-demo2.herokuapp.com/mercy3")
 
     }
+
+    /*
 
     inner class HitAPITask : AsyncTask<String, String, String>() {
 
@@ -194,6 +196,7 @@ class page6 : AppCompatActivity() {
             textView_title.text = result
         }
     }
+    */
 
 
 
