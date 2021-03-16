@@ -23,13 +23,16 @@ class page6 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page6)
 
+        val bundle = intent.extras
+        val date_data: String? = bundle?.getString("date")
+
 
             //ボタンがクリックされたらAPIを叩く。
-            HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/02/a/TASK")
-            HitAPITask2().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/02/a/TASK")
-        HitAPITask3().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/02/a/TASK")
-        HitAPITask4().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/02/a/TASK")
-        HitAPITask5().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/02/a/TASK")
+            HitAPITask().execute(date_data)
+            HitAPITask2().execute(date_data)
+        HitAPITask3().execute(date_data)
+        HitAPITask4().execute(date_data)
+        HitAPITask5().execute(date_data)
 
     }
 
