@@ -50,7 +50,6 @@
         android:id="@+id/textInputLayout5"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:hintTextColor="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/imageView17"
         app:layout_constraintEnd_toEndOf="@+id/imageView17"
         app:layout_constraintStart_toStartOf="@+id/imageView17"
@@ -59,7 +58,6 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="例）数学"
             android:textColorHint="#8A8A8A" />
 
     </com.google.android.material.textfield.TextInputLayout>
