@@ -176,13 +176,13 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"
         android:layout_width="380dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/yotei_memo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/yotei_memo"
-        app:layout_constraintVertical_bias="0.292">
+        app:layout_constraintVertical_bias="0.928">
 
     </com.google.android.material.textfield.TextInputLayout>
 
