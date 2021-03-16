@@ -22,7 +22,8 @@ class page5 : AppCompatActivity() {
         val bundle = intent.extras
         //date_page5　の中身　2021/2/10
         val date_page5: String? = bundle?.getString("date_page2")
-        toolbar.title=date_page5
+        val dateful_page5: String? = bundle?.getString("dateful_page5")
+        toolbar.title=dateful_page5
 
 
 

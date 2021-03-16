@@ -11,9 +11,11 @@ class page2 : AppCompatActivity() {
         setContentView(R.layout.activity_page2)
 
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            val date_page2:String = "" + year + "/" +month+1 + "/" + dayOfMonth
+            val date_page2:String =dayOfMonth.toString()
+            val dateful_page2:String = "" +  month + "月" + dayOfMonth + "日"
             val intent = Intent(this@page2,page5::class.java)
             intent.putExtra("date_page2",date_page2)
+            intent.putExtra("datefull_page2",dateful_page2)
             startActivity(intent)
         }
     }
