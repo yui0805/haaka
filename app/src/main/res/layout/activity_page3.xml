@@ -10,9 +10,9 @@
         android:id="@+id/linearLayout3"
         android:layout_width="420dp"
         android:layout_height="683dp"
+        android:gravity="bottom"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="-6dp"
-        tools:layout_editor_absoluteY="48dp">
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
             android:id="@+id/imageView15"
@@ -59,8 +59,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="0dp"
+        android:gravity="bottom"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayout3">
 
         <Button
@@ -75,25 +79,29 @@
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:text="Button" />
+            android:text="Button"
+            android:visibility="invisible" />
 
         <Button
             android:id="@+id/button4"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:text="Button" />
+            android:text="Button"
+            android:visibility="invisible" />
 
         <Button
             android:id="@+id/button5"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:text="Button" />
+            android:text="Button"
+            android:visibility="invisible" />
 
         <Button
             android:id="@+id/button7"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:text="Button" />
+            android:text="Button"
+            android:visibility="invisible" />
     </LinearLayout>
 
     <TextView
