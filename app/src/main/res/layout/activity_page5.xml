@@ -33,40 +33,18 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5">
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="170dp">
 
-        <Button
-            android:id="@+id/button2"
+        <ImageView
+            android:id="@+id/imageView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="予定１" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="予定２" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="予定３" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="予定４" />
-
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="新規予定を追加" />
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            app:srcCompat="@drawable/bargre" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
