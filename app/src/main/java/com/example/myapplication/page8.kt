@@ -21,7 +21,7 @@ class page8 : AppCompatActivity() {
         val bundle = intent.extras
         val date_data: String? = bundle?.getString("date")
 
-        val str_url: String? = date_data
+        val str_url: String? = "2"
 
 
 
@@ -34,11 +34,11 @@ class page8 : AppCompatActivity() {
         HitAPITask5().execute("https://beginners-hack-demo2.herokuapp.com/" +str_url)
         */
 
-        HitAPITask().execute("https://jsondata.okiba.me/v1/json/zHEKx210316132619")
-        HitAPITask2().execute("https://jsondata.okiba.me/v1/json/zHEKx210316132619")
-        HitAPITask3().execute("https://jsondata.okiba.me/v1/json/zHEKx210316132619")
-        HitAPITask4().execute("https://jsondata.okiba.me/v1/json/zHEKx210316132619")
-        HitAPITask5().execute("https://jsondata.okiba.me/v1/json/zHEKx210316132619")
+        HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + str_url + "/a/" + "EVENT")
+        HitAPITask2().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + str_url + "/a/" + "EVENT")
+        HitAPITask3().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + str_url + "/a/" + "EVENT")
+        HitAPITask4().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + str_url + "/a/" + "EVENT")
+        HitAPITask5().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + str_url + "/a/" + "EVENT")
 
 
 
@@ -374,7 +374,7 @@ class page8 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            //place_view.text = result
+            memo_edit.setText(result)
         }
     }
 
@@ -455,7 +455,7 @@ class page8 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            //editTextTextPersonName5.text = result
+            editTextTextPersonName5.setText(result)
         }
     }
 
