@@ -24,20 +24,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="メモ"
+        android:textColor="#000000"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kyoka_view"
+        app:layout_constraintVertical_bias="1.0" />
+
     <EditText
         android:id="@+id/editTextTextPersonName4"
         android:layout_width="0dp"
         android:layout_height="100dp"
+        android:layout_marginBottom="164dp"
+        android:background="@drawable/utikomi"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/textView20"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
@@ -58,36 +67,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/textView21"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <TextView
-            android:id="@+id/place_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="場所 : COMPASS小倉"
-            android:textAlignment="textStart"
-            android:textSize="30sp" />
-        <TextView
-            android:id="@+id/kyoka_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="2021年3月15日　月曜日"
-            android:textAlignment="textStart"
-            android:textSize="30sp" />
-        <TextView
-            android:id="@+id/end_time_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="11:00 ~ 17:00"
-            android:textAlignment="textStart"
-            android:textSize="30sp" />
-    </LinearLayout>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
@@ -96,7 +75,6 @@
         android:background="@drawable/header"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:title="（ハッカソン会議）"
         app:titleTextColor="#FFFFFF"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="0dp" />
@@ -112,5 +90,46 @@
         app:layout_constraintEnd_toEndOf="@+id/button"
         app:layout_constraintStart_toStartOf="@+id/button"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/kyoka_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2021年3月15日月曜日 17:00~19:00"
+        android:textAlignment="textStart"
+        android:textColor="#3b3b3b"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/place_view" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="ハッカソン会議"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+
+    <TextView
+        android:id="@+id/place_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="場所 : COMPASS小倉"
+        android:textAlignment="textStart"
+        android:textColor="#FF3733FF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,17 +14,21 @@
         android:layout_marginTop="28dp"
         android:text="イベント"
         android:textColor="#000000"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6">
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.0">
 
         <Button
             android:id="@+id/button8"
@@ -81,6 +85,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -92,13 +97,12 @@
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginBottom="-5dp"
             android:background="#FFFFFF"
             android:paddingTop="0dp"
             android:paddingBottom="0dp"
-            android:text="予定１"
             android:textColor="#000000"
             app:backgroundTint="#FFFFFF"
             app:backgroundTintMode="add"
@@ -109,8 +113,9 @@
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginBottom="-5dp"
             android:paddingTop="0dp"
             android:paddingBottom="0dp"
             android:text="予定２"
@@ -123,7 +128,10 @@
         <Button
             android:id="@+id/button4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginBottom="-5dp"
+            android:gravity="fill"
             android:text="予定３"
             android:textColor="#000000"
             app:backgroundTint="#FFFFFF"
@@ -134,7 +142,9 @@
         <Button
             android:id="@+id/button5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginBottom="-5dp"
             android:text="予定４"
             android:textColor="#000000"
             app:backgroundTint="#FFFFFF"
@@ -145,7 +155,9 @@
         <Button
             android:id="@+id/button7"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginBottom="-5dp"
             android:text="新規予定を追加"
             android:textColor="#8E8E8E"
             app:backgroundTint="#FFFFFF" />
@@ -159,15 +171,66 @@
         android:background="@drawable/header"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:title="3月20日" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:text="課題"
         android:textColor="#000000"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="356dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2">
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="fill"
+            android:text="ハッカソン" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="fill"
+            android:text="ハッカソン" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="fill"
+            android:text="ハッカソン" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="fill"
+            android:text="ハッカソン" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="fill"
+            android:text="新規予定を追加" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
