@@ -62,8 +62,8 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:foregroundGravity="top"
-        app:layout_constraintBottom_toTopOf="@+id/textView26"
-        app:layout_constraintEnd_toEndOf="@+id/textView25"
+        app:layout_constraintBottom_toTopOf="@+id/T_5"
+        app:layout_constraintEnd_toEndOf="@+id/T_3"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -89,7 +89,7 @@
         android:foregroundGravity="top"
         android:text="Button"
         app:backgroundTint="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/textView24"
+        app:layout_constraintBottom_toTopOf="@+id/T_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -104,7 +104,7 @@
         android:foregroundGravity="top"
         android:text="Button"
         app:backgroundTint="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/textView26"
+        app:layout_constraintBottom_toTopOf="@+id/T_5"
         app:layout_constraintEnd_toEndOf="@+id/imageView11"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -152,7 +152,7 @@
         app:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView24" />
+        app:layout_constraintTop_toTopOf="@+id/T_2" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
@@ -185,7 +185,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/T_1"
         android:layout_width="376dp"
         android:layout_height="50dp"
         android:gravity="center_vertical"
@@ -201,7 +201,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/T_2"
         android:layout_width="380dp"
         android:layout_height="50dp"
         android:gravity="center_vertical"
@@ -217,7 +217,7 @@
         app:layout_constraintVertical_bias="0.110000014" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/T_3"
         android:layout_width="378dp"
         android:layout_height="50dp"
         android:gravity="center_vertical"
@@ -233,7 +233,7 @@
         app:layout_constraintVertical_bias="0.269" />
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/T_4"
         android:layout_width="371dp"
         android:layout_height="50dp"
         android:gravity="center_vertical"
@@ -249,7 +249,7 @@
         app:layout_constraintVertical_bias="0.545" />
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/T_5"
         android:layout_width="378dp"
         android:layout_height="46dp"
         android:gravity="center_vertical"
@@ -265,7 +265,7 @@
         app:layout_constraintVertical_bias="0.41" />
 
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/SUB_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="[2020 秋セメスター] 心理学入門(101)"
@@ -278,7 +278,7 @@
         app:layout_constraintVertical_bias="0.73" />
 
     <TextView
-        android:id="@+id/textView30"
+        android:id="@+id/SUB_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="[2020 秋セメスター] 心理学入門(101)"
@@ -291,7 +291,7 @@
         app:layout_constraintVertical_bias="0.01999998" />
 
     <TextView
-        android:id="@+id/textView37"
+        android:id="@+id/SUB_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="[2020 秋セメスター] 心理学入門(101)"
@@ -304,7 +304,7 @@
         app:layout_constraintVertical_bias="0.19999999" />
 
     <TextView
-        android:id="@+id/textView38"
+        android:id="@+id/SUB_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="[2020 秋セメスター] 心理学入門(101)"
@@ -317,7 +317,7 @@
         app:layout_constraintVertical_bias="0.36" />
 
     <TextView
-        android:id="@+id/textView39"
+        android:id="@+id/SUB_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="[2020 秋セメスター] 心理学入門(101)"
@@ -330,7 +330,7 @@
         app:layout_constraintVertical_bias="0.526" />
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/END_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="受付終了日時：2020-11-30"
@@ -343,7 +343,7 @@
         app:layout_constraintVertical_bias="0.091" />
 
     <TextView
-        android:id="@+id/textView32"
+        android:id="@+id/END_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="受付終了日時：2020-11-30"
@@ -356,7 +356,7 @@
         app:layout_constraintVertical_bias="0.19999999" />
 
     <TextView
-        android:id="@+id/textView33"
+        android:id="@+id/END_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="受付終了日時：2020-11-30"
@@ -369,7 +369,7 @@
         app:layout_constraintVertical_bias="0.349" />
 
     <TextView
-        android:id="@+id/textView34"
+        android:id="@+id/END_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="受付終了日時：2020-11-30"
@@ -382,7 +382,7 @@
         app:layout_constraintVertical_bias="0.614" />
 
     <TextView
-        android:id="@+id/textView35"
+        android:id="@+id/END_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="受付終了日時：2020-11-30"
