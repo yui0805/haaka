@@ -21,7 +21,7 @@ class page8 : AppCompatActivity() {
         val bundle = intent.extras
         val date_data: String? = bundle?.getString("date")
 
-        val str_url: String? = "02"
+        val str_url: String? = date_data
 
 
 
@@ -34,11 +34,11 @@ class page8 : AppCompatActivity() {
         HitAPITask5().execute("https://beginners-hack-demo2.herokuapp.com/" +str_url)
         */
 
-        HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + str_url + "/a/" + "EVENT")
-        HitAPITask2().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + str_url + "/a/" + "EVENT")
-        HitAPITask3().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + str_url + "/a/" + "EVENT")
-        HitAPITask4().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + str_url + "/a/" + "EVENT")
-        HitAPITask5().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + str_url + "/a/" + "EVENT")
+        HitAPITask().execute(str_url)
+        HitAPITask2().execute(str_url)
+        HitAPITask3().execute(str_url)
+        HitAPITask4().execute(str_url )
+        HitAPITask5().execute(str_url)
 
 
 
