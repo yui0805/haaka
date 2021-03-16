@@ -35,7 +35,7 @@
             app:backgroundTint="#FFFFFF"
             app:icon="@drawable/red"
             app:iconSize="12dp"
-            app:iconTint="fd151b" />
+            app:iconTint="#fd151b" />
 
         <Button
             android:id="@+id/button9"
@@ -46,7 +46,7 @@
             app:backgroundTint="#FFFFFF"
             app:icon="@drawable/yellow"
             app:iconSize="12dp"
-            app:iconTint="ffb30f" />
+            app:iconTint="#ffb30f" />
 
         <Button
             android:id="@+id/button10"
@@ -57,7 +57,7 @@
             app:backgroundTint="#FFFFFF"
             app:icon="@drawable/bulue"
             app:iconSize="12dp"
-            app:iconTint="01295f" />
+            app:iconTint="#01295f" />
 
         <Button
             android:id="@+id/button11"
@@ -68,7 +68,7 @@
             app:backgroundTint="#FFFFFF"
             app:icon="@drawable/green"
             app:iconSize="12dp"
-            app:iconTint="849324" />
+            app:iconTint="#849324" />
 
         <Button
             android:id="@+id/button12"
@@ -104,12 +104,13 @@
             app:backgroundTintMode="add"
             app:icon="@drawable/red"
             app:iconSize="12dp"
-            app:iconTint="fd151b" />
+            app:iconTint="#fd151b" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
             android:paddingTop="0dp"
             android:paddingBottom="0dp"
             android:text="予定２"
@@ -117,7 +118,7 @@
             app:backgroundTint="#FFFFFF"
             app:icon="@drawable/skyblue"
             app:iconSize="12dp"
-            app:iconTint="437f97" />
+            app:iconTint="#437f97" />
 
         <Button
             android:id="@+id/button4"
@@ -128,7 +129,7 @@
             app:backgroundTint="#FFFFFF"
             app:icon="@drawable/yellow"
             app:iconSize="12dp"
-            app:iconTint="ffb30f" />
+            app:iconTint="#FFB30F" />
 
         <Button
             android:id="@+id/button5"
@@ -139,7 +140,7 @@
             app:backgroundTint="#FFFFFF"
             app:icon="@drawable/green"
             app:iconSize="12dp"
-            app:iconTint="849324" />
+            app:iconTint="#849324" />
 
         <Button
             android:id="@+id/button7"
