@@ -22,8 +22,8 @@
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:text="メモ"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -34,14 +34,15 @@
 
     <EditText
         android:id="@+id/yotei_memo"
-        android:layout_width="0dp"
+        android:layout_width="380dp"
         android:layout_height="0dp"
         android:layout_marginBottom="309dp"
-        android:background="@drawable/kakikomi"
+        android:background="@drawable/utikomi"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -49,28 +50,29 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
         android:text="URL"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName5"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName5"
-        app:layout_constraintTop_toBottomOf="@+id/yotei_memo" />
+        app:layout_constraintTop_toBottomOf="@+id/yotei_memo"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/editTextTextPersonName5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="132dp"
-        android:background="@drawable/utikomi2"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:background="@drawable/kakikomi3"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
@@ -140,5 +142,48 @@
         app:layout_constraintBottom_toTopOf="@+id/textView21"
         app:layout_constraintStart_toStartOf="@+id/place_view"
         app:layout_constraintTop_toBottomOf="@+id/place_view" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText2"
+        android:layout_width="380dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="109dp"
+        android:hint="記入してください。"
+        app:layout_constraintBottom_toBottomOf="@+id/yotei_memo"
+        app:layout_constraintEnd_toEndOf="@+id/yotei_memo"
+        app:layout_constraintStart_toStartOf="@+id/yotei_memo"
+        app:layout_constraintTop_toTopOf="@+id/yotei_memo" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName5"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName5"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName5"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName5">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="貼り付けてください。"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName5"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName5"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName5"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName5" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/yotei_memo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/yotei_memo"
+        app:layout_constraintVertical_bias="0.292">
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
