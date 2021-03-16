@@ -70,7 +70,7 @@
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/imageView20"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.Toolbar
@@ -82,8 +82,10 @@
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toTopOf="@+id/textView15"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView17" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView17"
+        app:layout_constraintVertical_bias="0.286" />
 
     <TextView
         android:id="@+id/textView16"
@@ -119,18 +121,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar4"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/group5" />
-
-    <Button
-        android:id="@+id/button4"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:text="Button"
-        app:backgroundTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <TextView
         android:id="@+id/textView18"
@@ -144,7 +136,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.167"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        app:layout_constraintTop_toTopOf="@+id/imageView20"
         app:layout_constraintVertical_bias="0.171" />
 
     <TextView
@@ -164,26 +156,12 @@
         android:id="@+id/imageView21"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:layout_marginBottom="248dp"
+        android:layout_marginBottom="220dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/group8" />
-
-    <Button
-        android:id="@+id/button5"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:text="Button"
-        app:backgroundTint="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView21"
-        app:layout_constraintTop_toBottomOf="@+id/imageView20"
-        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView23"
@@ -195,8 +173,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.251"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView20"
-        app:layout_constraintVertical_bias="0.676" />
+        app:layout_constraintTop_toTopOf="@+id/imageView21"
+        app:layout_constraintVertical_bias="0.654" />
 
     <TextView
         android:id="@+id/textView22"
@@ -210,22 +188,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView20"
-        app:layout_constraintVertical_bias="0.079" />
+        app:layout_constraintTop_toTopOf="@+id/imageView21"
+        app:layout_constraintVertical_bias="0.157" />
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="412dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="-6dp"
-        android:layout_marginBottom="-6dp"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/barnum"
         android:text="新規課題を追加"
         android:textColor="#80000000"
-        app:backgroundTint="#00FFFFFF"
+        app:backgroundTint="#FFFFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView21"
         app:layout_constraintVertical_bias="0.0" />
