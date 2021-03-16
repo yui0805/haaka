@@ -18,7 +18,7 @@ class page5 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page5)
 
-                    button5.setOnClickListener {
+                    button11.setOnClickListener {
                         //ボタンがクリックされたらAPIを叩く。
                         HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/mercy3")
                     }
