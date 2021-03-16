@@ -77,7 +77,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/header"
         android:minHeight="?attr/actionBarSize"
@@ -143,18 +143,8 @@
         app:layout_constraintStart_toStartOf="@+id/place_view"
         app:layout_constraintTop_toBottomOf="@+id/place_view" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText2"
-        android:layout_width="380dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="109dp"
-        android:hint="記入してください。"
-        app:layout_constraintBottom_toBottomOf="@+id/yotei_memo"
-        app:layout_constraintEnd_toEndOf="@+id/yotei_memo"
-        app:layout_constraintStart_toStartOf="@+id/yotei_memo"
-        app:layout_constraintTop_toTopOf="@+id/yotei_memo" />
-
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName5"
@@ -167,23 +157,25 @@
     <com.google.android.material.textfield.TextInputEditText
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:hint="貼り付けてください。"
         app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName5"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName5"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName5"
         app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName5" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
-        android:layout_width="380dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/yotei_memo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/yotei_memo"
-        app:layout_constraintVertical_bias="0.928">
+        app:layout_constraintEnd_toEndOf="@+id/yotei_memo"
+        app:layout_constraintStart_toStartOf="@+id/yotei_memo"
+        app:layout_constraintTop_toTopOf="@+id/yotei_memo">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:autoText="false"
+            android:background="#00FFFFFF"
+            android:freezesText="false" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
