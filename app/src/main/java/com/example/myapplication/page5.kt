@@ -27,24 +27,24 @@ class page5 : AppCompatActivity() {
 
 
 
-        val URL = "https://beginners-hack-demo2.herokuapp.com/DL_sampledata" + date_page5
+        val URL = "https://beginners-hack-demo2.herokuapp.com/DL_sampledata/" + date_page5
 
-        val URL_1 = URL +"/a"+"/EVENT"
-        val URL_2 = URL +"/b"+"/EVENT"
-        val URL_3 = URL +"/c"+"/EVENT"
-        val URL_4 = URL +"/d"+"/EVENT"
-        val URL_5 = URL +"/e"+"/EVENT"
+        val URL_1:String = URL +"/a"+"/EVENT"
+        val URL_2:String = URL +"/b"+"/EVENT"
+        val URL_3:String = URL +"/c"+"/EVENT"
+        val URL_4:String = URL +"/d"+"/EVENT"
+        val URL_5:String = URL +"/e"+"/EVENT"
 
-        val URL_6 = URL +"/a"+"/TASK"
-        val URL_7 = URL +"/b"+"/TASK"
-        val URL_8 = URL +"/c"+"/TASK"
-        val URL_9 = URL +"/d"+"/TASK"
-        val URL_10 = URL +"/e"+"/TASK"
+        val URL_6:String = URL +"/a"+"/TASK"
+        val URL_7:String = URL +"/b"+"/TASK"
+        val URL_8:String = URL +"/c"+"/TASK"
+        val URL_9:String = URL +"/d"+"/TASK"
+        val URL_10:String = URL +"/e"+"/TASK"
 
 
 
                         //ボタンがクリックされたらAPIを叩く。
-        HitAPITask().execute(""+URL)
+        HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/17/a/EVENT")
         HitAPITask2().execute(""+URL_2)
         HitAPITask3().execute(""+URL_3)
         HitAPITask4().execute(""+URL_4)
@@ -163,7 +163,7 @@ class page5 : AppCompatActivity() {
                         val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
 
                         //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
-                        val movieName: String = detailJsonObj.getString("TITLW")  // => Your Name.
+                        val movieName: String = detailJsonObj.getString("TITLE")  // => Your Name.
 
                         //Stringでreturnしてあげましょう。
                         return "$movieName"
@@ -576,7 +576,7 @@ class page5 : AppCompatActivity() {
                 val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
 
                 //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
-                val movieName: String = detailJsonObj.getString("TITLW")  // => Your Name.
+                val movieName: String = detailJsonObj.getString("TITLE")  // => Your Name.
 
                 //Stringでreturnしてあげましょう。
                 return "$movieName"
