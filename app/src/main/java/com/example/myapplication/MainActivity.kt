@@ -2,11 +2,20 @@ package com.example.myapplication
 
 
 import android.content.Intent
+import android.os.AsyncTask
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.button
 import kotlinx.android.synthetic.main.activity_page6.*
+import org.json.JSONException
+import org.json.JSONObject
+import java.io.BufferedReader
+import java.io.IOException
+import java.io.InputStreamReader
+import java.net.HttpURLConnection
+import java.net.MalformedURLException
+import java.net.URL
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        HitAPITask().execute("https://jsondata.okiba.me/v1/json/RV6fn210316161358")
+        HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
 //        HitAPITask2().execute("https://jsondata.okiba.me/v1/json/RV6fn210316161358")
 //        HitAPITask3().execute("https://jsondata.okiba.me/v1/json/RV6fn210316161358")
 //        HitAPITask4().execute("https://jsondata.okiba.me/v1/json/RV6fn210316161358")
@@ -507,7 +516,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
+*/
     inner class HitAPITask : AsyncTask<String, String, String>() {
 
         override fun doInBackground(vararg params: String?): String? {
@@ -547,7 +556,7 @@ class MainActivity : AppCompatActivity() {
                 //JSONObjectを使って、まず全体のJSONObjectを取ります。
                 val parentJsonObj = JSONObject(jsonText)
                 //今回のJSONは配列になっているので（データは一つですが）、全体のJSONObjectから、getJSONArrayで配列"movies"を取ります。
-                val parentJsonArray = parentJsonObj.getJSONArray("TIMETABLE")
+                val parentJsonArray = parentJsonObj.getJSONArray("data")
 
                 //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
                 val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
@@ -589,6 +598,8 @@ class MainActivity : AppCompatActivity() {
             T_MON_2.text = result
         }
     }
+
+    /*
 
     inner class HitAPITask2 : AsyncTask<String, String, String>() {
 

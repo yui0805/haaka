@@ -3,7 +3,6 @@ package com.example.myapplication
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_page6.textView_title
 import kotlinx.android.synthetic.main.activity_page8.*
 import org.json.JSONException
 import org.json.JSONObject
