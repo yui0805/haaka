@@ -7,6 +7,93 @@
     android:background="#FFFDF6"
     tools:context=".page5">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="0.90999997">
+
+        <Button
+            android:id="@+id/event_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/event_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/event_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/event_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/event_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="@+id/toolbar">
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/plan_1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Button"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/plan_2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Button"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/plan_3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Button"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/plan_4"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Button"
+            android:visibility="invisible" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
@@ -27,7 +114,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             app:srcCompat="@drawable/barbul" />
@@ -91,10 +178,11 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.39999998">
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="0dp"

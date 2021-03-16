@@ -21,7 +21,7 @@ class page8 : AppCompatActivity() {
         val bundle = intent.extras
         val date_data: String? = bundle?.getString("date")
 
-        val str_url: String? = "2"
+        val str_url: String? = "02"
 
 
 

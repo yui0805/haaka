@@ -25,11 +25,11 @@ class page6 : AppCompatActivity() {
 
 
             //ボタンがクリックされたらAPIを叩く。
-            HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/2/a/TASK")
-            HitAPITask2().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/2/a/TASK")
-        HitAPITask3().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/2/a/TASK")
-        HitAPITask4().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/2/a/TASK")
-        HitAPITask5().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/2/a/TASK")
+            HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/02/a/TASK")
+            HitAPITask2().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/02/a/TASK")
+        HitAPITask3().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/02/a/TASK")
+        HitAPITask4().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/02/a/TASK")
+        HitAPITask5().execute("https://beginners-hack-demo2.herokuapp.com/DL_sampledata/02/a/TASK")
 
     }
 

@@ -23,11 +23,11 @@ class page5 : AppCompatActivity() {
         //date_page5　の中身　2021/2/10
         val date_page5: String? = bundle?.getString("date_page2")
         val dateful_page5: String? = bundle?.getString("dateful_page5")
-        toolbar.title=dateful_page5
+        toolbar.title = dateful_page5
 
 
 
-        val URL = "https://beginners-hack-demo2.herokuapp.com/" + date_page5
+        val URL = "https://beginners-hack-demo2.herokuapp.com/DL_sampledata" + date_page5
 
         val URL_1 = URL +"/a"+"/EVENT"
         val URL_2 = URL +"/b"+"/EVENT"
@@ -44,18 +44,20 @@ class page5 : AppCompatActivity() {
 
 
                         //ボタンがクリックされたらAPIを叩く。
-//        HitAPITask().execute(""+URL)
-//        HitAPITask2().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
-//        HitAPITask3().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
-//        HitAPITask4().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
-//        HitAPITask5().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
-//        HitAPITask6().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
-//        HitAPITask7().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
-//        HitAPITask8().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
-//        HitAPITask9().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
-//        HitAPITask10().execute("https://beginners-hack-demo2.herokuapp.com/" + date_page5)
+        HitAPITask().execute(""+URL)
+        HitAPITask2().execute(""+URL_2)
+        HitAPITask3().execute(""+URL_3)
+        HitAPITask4().execute(""+URL_4)
+        HitAPITask5().execute(""+URL_5)
+        HitAPITask6().execute(""+URL_6)
+        HitAPITask7().execute(""+URL_7)
+        HitAPITask8().execute(""+URL_8)
+        HitAPITask9().execute(""+URL_9)
+        HitAPITask10().execute(""+URL_10)
 
-        /*
+
+
+
         event_1.setOnClickListener{
             intent = Intent(this@page5,page8::class.java)
             intent.putExtra("date", URL_1)
@@ -83,9 +85,7 @@ class page5 : AppCompatActivity() {
             intent.putExtra("date", URL_5)
             startActivity(intent)
         }
-        add_plan.setOnClickListener{
 
-        }
 
         plan_1.setOnClickListener{
             intent = Intent(this@page5,page8::class.java)
@@ -104,17 +104,10 @@ class page5 : AppCompatActivity() {
         }
         plan_4.setOnClickListener{
             intent = Intent(this@page5,page8::class.java)
-            intent.putExtra("date", URL_9)
-            startActivity(intent)
-        }
-        plan_5.setOnClickListener{
-            intent = Intent(this@page5,page8::class.java)
             intent.putExtra("date", URL_10)
             startActivity(intent)
         }
-        add_task{
 
-        }
 
 
 
@@ -939,20 +932,18 @@ class page5 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            plan_5.text = result
+            //plan_5.text = result
         }
 
-         */
+
+    }
+
+
+
     }
 
 
 
 
 
-
-
-
-
-
-}
 
