@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
+//        HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
 //        HitAPITask2().execute("https://jsondata.okiba.me/v1/json/RV6fn210316161358")
 //        HitAPITask3().execute("https://jsondata.okiba.me/v1/json/RV6fn210316161358")
 //        HitAPITask4().execute("https://jsondata.okiba.me/v1/json/RV6fn210316161358")
@@ -174,8 +174,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    /*
 
+/*
     inner class HitAPITask8 : AsyncTask<String, String, String>() {
 
         override fun doInBackground(vararg params: String?): String? {
@@ -519,7 +519,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-*/
+
     inner class HitAPITask : AsyncTask<String, String, String>() {
 
         override fun doInBackground(vararg params: String?): String? {
@@ -602,7 +602,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /*
+
 
     inner class HitAPITask2 : AsyncTask<String, String, String>() {
 
@@ -1187,8 +1187,8 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+*/
 
-     */
 
 
 }
