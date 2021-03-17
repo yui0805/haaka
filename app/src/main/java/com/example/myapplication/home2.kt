@@ -24,30 +24,30 @@ class home2 : AppCompatActivity() {
         val URL = "https://beginners-hack-demo2.herokuapp.com/DL_sampledata/17/a/EVENT"
         val URL2 = "https://beginners-hack-demo2.herokuapp.com/DL_sampledata/17/a/TASK"
 
-//        HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
-//        HitAPITask2().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
-//        HitAPITask3().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
-//        HitAPITask4().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
-//        HitAPITask5().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
-//        HitAPITask6().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
-//        HitAPITask7().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
-//        HitAPITask8().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
-//        HitAPITask9().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
-//        HitAPITask10().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
-//        HitAPITask11().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
-//        HitAPITask12().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
-//
-//        HitAPITask15().execute(URL)
-//        HitAPITask16().execute(URL2)
+        HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
+        HitAPITask2().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
+        HitAPITask3().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
+        HitAPITask4().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
+        HitAPITask5().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
+        HitAPITask6().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
+        HitAPITask7().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
+        HitAPITask8().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
+        HitAPITask9().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
+        HitAPITask10().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
+        HitAPITask11().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
+        HitAPITask12().execute("https://beginners-hack-demo2.herokuapp.com/sample_TimeTable")
+
+        HitAPITask15().execute(URL)
+        HitAPITask16().execute(URL2)
 
 
-/*
+
         button_calender.setOnClickListener{
             intent = Intent(this@home2,page2::class.java)
         }
 
 
-        today_home.text = "3月10日(水)"
+
 
     }
 
@@ -1211,7 +1211,6 @@ class home2 : AppCompatActivity() {
 
         }
 
- */
-    }
+
 
 }
