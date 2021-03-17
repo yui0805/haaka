@@ -51,12 +51,12 @@
 
     <ImageView
         android:id="@+id/imageView22"
-        android:layout_width="315dp"
-        android:layout_height="351dp"
+        android:layout_width="320dp"
+        android:layout_height="355dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/imageView19"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.59"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView19"
         app:layout_constraintVertical_bias="1.0"
@@ -79,36 +79,46 @@
             <Button
                 android:id="@+id/button17"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="62dp"
+                android:layout_width="63dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
                 android:id="@+id/button15"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="62dp"
+                android:layout_width="63dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
                 android:id="@+id/T_WED_1"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="62dp"
+                android:layout_width="63dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
                 android:id="@+id/button12"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="62dp"
+                android:layout_width="63dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
                 android:id="@+id/T_FRI_1"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="62dp"
+                android:layout_width="63dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
         </TableRow>
@@ -120,36 +130,46 @@
             <Button
                 android:id="@+id/T_MON_2"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="62dp"
+                android:layout_width="63dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
                 android:id="@+id/T_TUE_2"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="62dp"
+                android:layout_width="63dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
                 android:id="@+id/button21"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="62dp"
+                android:layout_width="63dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
                 android:id="@+id/T_THR_2"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="62dp"
+                android:layout_width="63dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
                 android:id="@+id/button18"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="62dp"
+                android:layout_width="63dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
         </TableRow>
 
@@ -162,6 +182,8 @@
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="62dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
@@ -169,6 +191,8 @@
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="62dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
@@ -176,6 +200,8 @@
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="62dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
@@ -183,6 +209,8 @@
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="62dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
@@ -190,14 +218,10 @@
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="62dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
-            <Button
-                android:id="@+id/button11"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="62dp"
-                android:layout_height="68dp"
-                app:backgroundTint="#00FFFFFF" />
         </TableRow>
 
         <TableRow
@@ -209,6 +233,8 @@
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="62dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
@@ -216,6 +242,8 @@
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="62dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
@@ -223,6 +251,8 @@
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="62dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
@@ -230,6 +260,8 @@
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="62dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
@@ -237,6 +269,8 @@
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="62dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
         </TableRow>
 
@@ -249,6 +283,8 @@
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="62dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
@@ -256,6 +292,8 @@
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="62dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
@@ -263,6 +301,8 @@
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="62dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
@@ -270,6 +310,8 @@
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="62dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
@@ -277,6 +319,8 @@
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="62dp"
                 android:layout_height="68dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
                 app:backgroundTint="#00FFFFFF" />
         </TableRow>
     </TableLayout>
