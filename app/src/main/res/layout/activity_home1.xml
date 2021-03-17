@@ -167,7 +167,7 @@
                 android:text="Button" />
 
             <Button
-                android:id="@+id/button23"
+                android:id="@+id/T_MON_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Button" />
@@ -179,13 +179,13 @@
                 android:text="Button" />
 
             <Button
-                android:id="@+id/button19"
+                android:id="@+id/T_THR_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Button" />
 
             <Button
-                android:id="@+id/button14"
+                android:id="@+id/T_WED_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Button" />
@@ -208,19 +208,19 @@
                 android:text="Button" />
 
             <Button
-                android:id="@+id/button22"
+                android:id="@+id/T_TUE_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Button" />
 
             <Button
-                android:id="@+id/button19"
+                android:id="@+id/T_THR_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Button" />
 
             <Button
-                android:id="@+id/button14"
+                android:id="@+id/T_WED_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Button" />
@@ -243,19 +243,19 @@
                 android:text="Button" />
 
             <Button
-                android:id="@+id/button24"
+                android:id="@+id/T_FRI_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Button" />
 
             <Button
-                android:id="@+id/button19"
+                android:id="@+id/T_THR_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Button" />
 
             <Button
-                android:id="@+id/button14"
+                android:id="@+id/T_WED_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Button" />
@@ -272,7 +272,7 @@
                 android:text="Button" />
 
             <Button
-                android:id="@+id/button25"
+                android:id="@+id/T_THR_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Button" />
@@ -307,7 +307,7 @@
                 android:text="Button" />
 
             <Button
-                android:id="@+id/button26"
+                android:id="@+id/T_WED_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Button" />
@@ -319,13 +319,13 @@
                 android:text="Button" />
 
             <Button
-                android:id="@+id/button19"
+                android:id="@+id/T_THR_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Button" />
 
             <Button
-                android:id="@+id/button14"
+                android:id="@+id/T_WED_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Button" />
