@@ -44,6 +44,12 @@ class home2 : AppCompatActivity() {
 
         button_calender.setOnClickListener{
             intent = Intent(this@home2,page2::class.java)
+            startActivity(intent)
+        }
+
+        button_book.setOnClickListener {
+            intent = Intent(this@home2,page3::class.java)
+            startActivity(intent)
         }
 
 
@@ -103,7 +109,7 @@ class home2 : AppCompatActivity() {
 
 
                 //Stringでreturnしてあげましょう。
-                return "$movieName               $movieName2 ~ $movieName3"
+                return "        $movieName               $movieName3 ~ $movieName2"
 
                 //ここから下は、接続エラーとかJSONのエラーとかで失敗した時にエラーを処理する為のものです。
             } catch (e: MalformedURLException) {
@@ -187,7 +193,7 @@ class home2 : AppCompatActivity() {
 
 
                 //Stringでreturnしてあげましょう。
-                return "$movieName  $movieName2               $movieName3"
+                return "        $movieName  $movieName2               $movieName3"
 
                 //ここから下は、接続エラーとかJSONのエラーとかで失敗した時にエラーを処理する為のものです。
             } catch (e: MalformedURLException) {
