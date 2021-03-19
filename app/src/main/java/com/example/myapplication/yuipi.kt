@@ -9,6 +9,6 @@ class yuipi : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_yuipi)
 
-        webview.loadUrl("http://www.ritsumei.ac.jp/ct/")
+        webview.loadUrl("http://www.youtube.com")
     }
 }
