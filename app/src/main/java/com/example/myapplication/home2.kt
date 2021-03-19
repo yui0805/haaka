@@ -52,6 +52,13 @@ class home2 : AppCompatActivity() {
             startActivity(intent)
         }
 
+        home_button.setOnClickListener {
+            intent = Intent(this@home2,yuipi::class.java)
+            startActivity(intent)
+        }
+
+
+
 
 
 
