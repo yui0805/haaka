@@ -50,13 +50,13 @@ class page8 : AppCompatActivity() {
             //ここでAPIを叩きます。バックグラウンドで処理する内容です。
             var connection: HttpURLConnection? = null
             var reader: BufferedReader? = null
-            val buffer: StringBuffer
+            val buffer: StringBuffer //文字列の結合
 
             try {
                 //param[0]にはAPIのURI(String)を入れます(後ほど)。
-                //AsynkTask<...>の一つめがStringな理由はURIをStringで指定するからです。
+                //AsyncTask<...>の一つめがStringな理由はURIをStringで指定するからです。
                 val url = URL(params[0])
-                connection = url.openConnection() as HttpURLConnection
+                connection = url.openConnection() as HttpURLConnection //asはキャスト
                 connection.connect()  //ここで指定したAPIを叩いてみてます。
 
                 //ここから叩いたAPIから帰ってきたデータを使えるよう処理していきます。
