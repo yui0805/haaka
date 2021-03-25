@@ -3,39 +3,27 @@ package com.example.myapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.telecom.Call
-import retrofit2.http.GET
-import retrofit2.http.POST
+import okhttp3.RequestBody
+import okhttp3.ResponseBody
+import retrofit2.http.*
 import java.io.IOException
 
-class IApiService : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_i_api_service)
+interface MyService{
+    @GET("posts")
+    fun getRawResponseForPosts(): retrofit2.Call<ResponseBody>
 
-        interface IApiService{
-            @POST("https://beginners-hack-demo2.herokuapp.com/mercy3")
-            fun apiDemo(): Call<Info>
+    @POST("posts")
+    fun postRawRequestForPosts(@Body body: RequestBody):retrofit2.Call<ResponseBody>
 
-        }
+    @PUT("posts/{id}")
+    fun putRawResponseForPosts(@Path("id") id:String,@Body body:ResponseBody):retrofit2.Call<ResponseBody>
 
-        try {
-            val response = API.apiDemo().execute()
-            if (response.isSuccessful()) {
-                return response.body()
-            } else {
-                // failed
-            }
-        } catch (e: IOException e) {
-            e.printStackTrace()
-        }
+    @DELETE("posts/{id}")
+    fun deletePathParam(@Path("id") id: String):retrofit2.Call<ResponseBody>
 
-
-    }
-
-
-    data class Info(var title:String,
-                    var year:String)
 }
+
+
 
 
 
