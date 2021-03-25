@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.activity_post_test.*
 import kotlinx.coroutines.CoroutineScope
@@ -36,9 +37,14 @@ class Post_test : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-    PUSH.setOnClickListener {
+        val binding: Post_test =
+            DataBindingUtil.setContentView(this,R.layout.activity_post_test)
+
+        binding.sample = SampleBindingData("sample")
+
+
         onPostButtonClick(edittext)
-    }
+
 
 
     }
