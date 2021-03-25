@@ -40,7 +40,10 @@ class home2 : AppCompatActivity() {
         HitAPITask15().execute(URL)
         HitAPITask16().execute(URL2)
 
-
+        setting_button.setOnClickListener {
+            intent = Intent(this@home2,Post_test::class.java)
+            startActivity(intent)
+        }
 
         button_calender.setOnClickListener{
             intent = Intent(this@home2,page2::class.java)

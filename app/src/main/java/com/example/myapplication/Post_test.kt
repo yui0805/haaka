@@ -2,32 +2,22 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.telecom.Call
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
+import kotlinx.android.synthetic.main.activity_post_test.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import okhttp3.Interceptor
+import kotlinx.coroutines.withContext
 import okhttp3.MediaType
-import okhttp3.OkHttpClient
 import okhttp3.RequestBody
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
-import retrofit2.http.GET
-import retrofit2.http.POST
-import java.net.HttpURLConnection
-import java.net.URI
-import java.net.URL
-import java.util.concurrent.TimeUnit
 
 class Post_test : AppCompatActivity() {
     //Retrofit本体
     private val retrofit = Retrofit.Builder().apply {
-        baseUrl("https://beginners-hack-demo2.herokuapp.com/mercy3")
+        baseUrl("https://beginners-hack-demo2.herokuapp.com/")
     }.build()
 
     //サービスクラスの実装オブジェクト取得
@@ -46,10 +36,14 @@ class Post_test : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_post_test)
+    PUSH.setOnClickListener {
+        onPostButtonClick(edittext)
     }
 
-    fun onPostButtonClick(view: View) {
+
+    }
+
+    fun onPostButtonClick(view: View?) {
         if(!myViewModel.author.value.isNullOrBlank() && !myViewModel.title.value.isNullOrBlank()){
             val json = Util.creatJson(
                 title = myViewModel.title.value!!,
@@ -58,7 +52,9 @@ class Post_test : AppCompatActivity() {
 
             val requestBody = RequestBody.create(mediaType,json)
 
-            val post = service.postRawRequestForPosts(requestBody)
+            val data = Post(title = myViewModel.title.value!!,author = myViewModel.author.value!!)
+
+            val post = service.postRawRequestForPosts(data)
 
             scope.launch {
                 val responseBody = post.execute()
@@ -68,7 +64,93 @@ class Post_test : AppCompatActivity() {
                 }
             }
         }
+
     }
+
+    /**
+     * PUTボタンが押された時の処理
+     *
+     * @param view
+     */
+    fun onPutButtonClick(view: View) {
+
+        if ((!myViewModel.id.value.isNullOrBlank()
+                        && !myViewModel.title.value.isNullOrBlank()
+                        && !myViewModel.author.value.isNullOrBlank())
+        ) {
+
+            val json = Util.creatJson(
+                    id = myViewModel.id.value!!.toString(),
+                    title = myViewModel.title.value!!.toString(),
+                    author = myViewModel.author.value!!.toString()
+            )
+
+            val requestBody = RequestBody.create(mediaType, json)
+
+            val put = service.putRawRequestForPosts(myViewModel.id.value!!.toString(), requestBody)
+
+            scope.launch {
+                val responseBody = put.execute()
+
+                responseBody.body()?.let {
+
+                    myViewModel.result.postValue(it.toString())
+
+                }
+            }
+        }
+
+    }
+
+    /**
+     * DELETEボタンが押された時の処理
+     *
+     * @param view
+     */
+    fun onDeleteButtonClick(view: View) {
+
+
+        if (!myViewModel.id.value.isNullOrBlank()) {
+
+            val delete = service.deletePathParam(myViewModel.id.value!!)
+
+            scope.launch {
+
+                if (delete.execute().isSuccessful) {
+                    withContext(Dispatchers.Main) {
+
+                        Toast.makeText(this@Post_test, "削除成功", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
+
+    }
+
+    /**
+     * GETボタンが押された時の処理
+     *
+     * @param view
+     */
+    fun onGetButtonClick(view: View) {
+
+
+        val get = service.getRawResponseForPosts()
+
+        scope.launch {
+
+            val responseBody = get.execute()
+
+            responseBody.body()?.let {
+
+                myViewModel.result.postValue(it.string())
+
+            }
+        }
+    }
+
+
+
 
 
 
