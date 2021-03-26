@@ -37,13 +37,13 @@ class Post_test : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding: Post_test =
-            DataBindingUtil.setContentView(this,R.layout.activity_post_test)
+        //val binding: Post_test =
+            //DataBindingUtil.setContentView(this,R.layout.activity_post_test)
 
-        binding.sample = SampleBindingData("sample")
+        //binding.sample = SampleBindingData("sample")
 
 
-        onPostButtonClick(edittext)
+        //onPostButtonClick(edittext)
 
 
 
