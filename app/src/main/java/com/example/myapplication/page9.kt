@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -39,6 +40,11 @@ class page9 : AppCompatActivity() {
         HitAPITask3().execute(str_url)
         HitAPITask4().execute(str_url )
         HitAPITask5().execute(str_url)
+
+        button.setOnClickListener {
+            intent = Intent(this@page9,page8::class.java)
+            startActivity(intent)
+        }
 
 
 
@@ -122,7 +128,7 @@ class page9 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            textView_title.text = result
+            //textView_title.text = result
         }
     }
 
@@ -204,7 +210,7 @@ class page9 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            place_view.text = result
+            //place_view.text = result
         }
     }
 
@@ -292,7 +298,7 @@ class page9 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            kyoka_view.text = result
+            //kyoka_view.text = result
         }
     }
 
