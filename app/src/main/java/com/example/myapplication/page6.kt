@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import kotlinx.android.synthetic.main.activity_page5.*
 import kotlinx.android.synthetic.main.activity_page6.*
 import kotlinx.android.synthetic.main.activity_page8.*
@@ -13,11 +12,9 @@ import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
-import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
 import java.net.MalformedURLException
 import java.net.URL
-import java.net.URLEncoder
 
 class page6 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +32,7 @@ class page6 : AppCompatActivity() {
         HitAPITask4().execute(date_data)
         HitAPITask5().execute(date_data)
 
-        button100.setOnClickListener {
+        button_openpage9.setOnClickListener {
             intent = Intent(this@page6,page9::class.java)
             startActivity(intent)
         }

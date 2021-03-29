@@ -12,9 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity android:name=".page5_re"></activity>
-        <activity android:name=".MyViewModel" />
-        <activity android:name=".Util" />
-        <activity android:name=".IApiService" />
         <activity android:name=".Post_test" />
         <activity android:name=".MainActivity" />
         <activity android:name=".page4" />
@@ -27,6 +24,7 @@
         <activity android:name=".page5" />
         <activity android:name=".home1" />
         <activity android:name=".yuipi" />
+        <activity android:name=".page9" />
         <activity
             android:name=".home2"
             android:label="@string/app_name"
