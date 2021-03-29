@@ -11,7 +11,8 @@
         android:roundIcon="@drawable/iconhakadorikun"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".MyViewModel"></activity>
+        <activity android:name=".page5_re"></activity>
+        <activity android:name=".MyViewModel" />
         <activity android:name=".Util" />
         <activity android:name=".IApiService" />
         <activity android:name=".Post_test" />
