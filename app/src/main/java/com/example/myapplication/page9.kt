@@ -4,44 +4,51 @@ import android.content.Intent
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import kotlinx.android.synthetic.main.activity_page5.*
-import kotlinx.android.synthetic.main.activity_page6.*
-import kotlinx.android.synthetic.main.activity_page8.*
+import kotlinx.android.synthetic.main.activity_page9.*
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
-import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
 import java.net.MalformedURLException
 import java.net.URL
-import java.net.URLEncoder
 
-class page6 : AppCompatActivity() {
+class page9 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_page6)
+        setContentView(R.layout.activity_page9)
 
         val bundle = intent.extras
         val date_data: String? = bundle?.getString("date")
 
+        val str_url: String? = date_data
 
-            //ボタンがクリックされたらAPIを叩く。
-            HitAPITask().execute(date_data)
-            HitAPITask2().execute(date_data)
-        HitAPITask3().execute(date_data)
-        HitAPITask4().execute(date_data)
-        HitAPITask5().execute(date_data)
 
-        button100.setOnClickListener {
-            intent = Intent(this@page6,page9::class.java)
-            startActivity(intent)
-        }
+
+        //ボタンがクリックされたらAPIを叩く。
+        /*
+        HitAPITask().execute("https://beginners-hack-demo2.herokuapp.com/" + str_url)
+        HitAPITask2().execute("https://beginners-hack-demo2.herokuapp.com/" + str_url)
+        HitAPITask3().execute("https://beginners-hack-demo2.herokuapp.com/" +str_url)
+        HitAPITask4().execute("https://beginners-hack-demo2.herokuapp.com/" +str_url)
+        HitAPITask5().execute("https://beginners-hack-demo2.herokuapp.com/" +str_url)
+        */
+
+        HitAPITask().execute(str_url)
+        HitAPITask2().execute(str_url)
+        HitAPITask3().execute(str_url)
+        HitAPITask4().execute(str_url )
+        HitAPITask5().execute(str_url)
+
+//        button.setOnClickListener {
+//            intent = Intent(this@page9,page8::class.java)
+//            startActivity(intent)
+//        }
+
+
+
     }
-
-
 
     inner class HitAPITask : AsyncTask<String, String, String>() {
 
@@ -49,13 +56,13 @@ class page6 : AppCompatActivity() {
             //ここでAPIを叩きます。バックグラウンドで処理する内容です。
             var connection: HttpURLConnection? = null
             var reader: BufferedReader? = null
-            val buffer: StringBuffer
+            val buffer: StringBuffer //文字列の結合
 
             try {
                 //param[0]にはAPIのURI(String)を入れます(後ほど)。
-                //AsynkTask<...>の一つめがStringな理由はURIをStringで指定するからです。
+                //AsyncTask<...>の一つめがStringな理由はURIをStringで指定するからです。
                 val url = URL(params[0])
-                connection = url.openConnection() as HttpURLConnection
+                connection = url.openConnection() as HttpURLConnection //asはキャスト
                 connection.connect()  //ここで指定したAPIを叩いてみてます。
 
                 //ここから叩いたAPIから帰ってきたデータを使えるよう処理していきます。
@@ -121,7 +128,7 @@ class page6 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            textView7.text = result
+            //textView_title.text = result
         }
     }
 
@@ -170,7 +177,7 @@ class page6 : AppCompatActivity() {
                 val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
 
                 //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
-                val movieName: String = detailJsonObj.getString("SUBJECT")  // => Your Name.
+                val movieName: String = detailJsonObj.getString("PLACE")  // => Your Name.
 
 
                 //Stringでreturnしてあげましょう。
@@ -203,10 +210,12 @@ class page6 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            textView8.text = result
+            //place_view.text = result
         }
     }
 
+
+    //  placeviewに表示する
     inner class HitAPITask3 : AsyncTask<String, String, String>() {
 
         override fun doInBackground(vararg params: String?): String? {
@@ -251,14 +260,16 @@ class page6 : AppCompatActivity() {
                 //JSONArrayの中身を取ります。映画"Your Name"のデータは、配列"movies"の０番目のデータなので、
                 val detailJsonObj = parentJsonArray.getJSONObject(0)  //これもJSONObjectとして取得
 
-                //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
-                val movieName: String = detailJsonObj.getString("DAY")  // => Your Name.
-                val movieName2: String = detailJsonObj.getString("DATE")  // => Your Name.
-                val movieName3: String = detailJsonObj.getString("DEADLINE")  // => Your Name.
+
+                val movieName: String = detailJsonObj.getString("DATE")
+                val movieName2: String = detailJsonObj.getString("DAY")
+                val movieName3: String = detailJsonObj.getString("FROM_TIME")
+                val movieName4: String = detailJsonObj.getString("END_TIME")
+
 
 
                 //Stringでreturnしてあげましょう。
-                return "$movieName $movieName2 $movieName3"  // => Your Name. - 2016
+                return "$movieName $movieName2 $movieName3 ~ $movieName4"  // => Your Name. - 2016
 
                 //ここから下は、接続エラーとかJSONのエラーとかで失敗した時にエラーを処理する為のものです。
             } catch (e: MalformedURLException) {
@@ -287,7 +298,7 @@ class page6 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            textView10.text = result
+            //kyoka_view.text = result
         }
     }
 
@@ -369,7 +380,7 @@ class page6 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            textInputEditText2.setText(result)
+            memo_edit.setText(result)
         }
     }
 
@@ -420,7 +431,6 @@ class page6 : AppCompatActivity() {
                 //moviesの0番目のデータのtitle項目をStringで取ります。これで中身を取れました。
                 val movieName: String = detailJsonObj.getString("URL")  // => Your Name.
 
-
                 //Stringでreturnしてあげましょう。
                 return "$movieName"  // => Your Name. - 2016
 
@@ -451,13 +461,11 @@ class page6 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            textInputEditText3.setText(result)
+            editTextTextPersonName5.setText(result)
         }
     }
 
 
 
 
-
 }
-

@@ -7,42 +7,39 @@
     app:layout_anchorGravity="fill"
     tools:context=".page3">
 
-    <View
-        android:id="@+id/view2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#FFFDF6"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/header"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="課題"
+        app:titleMargin="12dp"
+        app:titleTextColor="#FFFFFF" />
 
     <ImageView
         android:id="@+id/imageView13"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="4dp"
         android:foregroundGravity="top"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
         app:srcCompat="@drawable/group9" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="0dp"
         android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13"
         app:srcCompat="@drawable/group7" />
 
     <ImageView
@@ -50,35 +47,28 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:foregroundGravity="top"
-        app:layout_constraintBottom_toTopOf="@+id/T_5"
-        app:layout_constraintEnd_toEndOf="@+id/T_3"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.968"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
         app:srcCompat="@drawable/group10" />
 
     <ImageView
         android:id="@+id/imageView14"
         android:layout_width="0dp"
         android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view2"
-        app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view2"
-        app:layout_constraintVertical_bias="0.482"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11"
         app:srcCompat="@drawable/group8" />
 
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="0dp"
-        android:layout_height="99dp"
-        android:layout_marginTop="400dp"
+        android:layout_height="100dp"
         android:foregroundGravity="top"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView14"
         app:srcCompat="@drawable/group5" />
 
     <Button
@@ -86,15 +76,14 @@
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="match_parent"
         android:layout_height="98dp"
+        android:layout_marginBottom="2dp"
         android:foregroundGravity="top"
         android:text="Button"
         app:backgroundTint="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/T_2"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView13"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/imageView13" />
 
     <Button
         android:id="@+id/button5"
@@ -104,12 +93,9 @@
         android:foregroundGravity="top"
         android:text="Button"
         app:backgroundTint="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/T_5"
-        app:layout_constraintEnd_toEndOf="@+id/imageView11"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.58" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="@+id/imageView5" />
 
     <Button
         android:id="@+id/button8"
@@ -120,153 +106,109 @@
         android:foregroundGravity="top"
         android:text="Button"
         app:backgroundTint="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view2"
-        app:layout_constraintVertical_bias="0.344" />
+        app:layout_constraintTop_toTopOf="@+id/imageView11" />
 
     <Button
         android:id="@+id/button10"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="0dp"
         android:layout_height="100dp"
+        android:layout_marginTop="2dp"
         android:text="Button"
         app:backgroundTint="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView13"
-        app:layout_constraintVertical_bias="0.444" />
+        app:layout_constraintTop_toTopOf="@+id/imageView14" />
 
     <Button
         android:id="@+id/button4"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="100dp"
-        android:layout_marginTop="16dp"
         android:foregroundGravity="top"
         android:text="Button"
         app:backgroundTint="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/T_2" />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar3"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/header"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="100dp"
-        android:layout_height="47dp"
-        android:gravity="center"
-        android:text="課題"
-        android:textColor="#FFFFFF"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/toolbar3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/toolbar3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/imageView12" />
 
     <TextView
         android:id="@+id/T_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
         android:gravity="center_vertical"
         android:text="第5回レポート"
         android:textColor="#494949"
         android:textSize="10pt"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/SUB_1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button3"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="@+id/imageView13"
+        app:layout_constraintTop_toTopOf="@+id/imageView13" />
 
     <TextView
         android:id="@+id/T_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
         android:gravity="center_vertical"
         android:text="第5回レポート"
         android:textColor="#494949"
         android:textSize="10pt"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/SUB_2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.124"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button5"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
 
     <TextView
         android:id="@+id/T_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
         android:gravity="center_vertical"
         android:text="第5回レポート"
         android:textColor="#494949"
         android:textSize="10pt"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/SUB_3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.124"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView11" />
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <TextView
         android:id="@+id/T_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
         android:gravity="center_vertical"
         android:text="第5回レポート"
         android:textColor="#494949"
         android:textSize="10pt"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/SUB_5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="@+id/imageView12"
+        app:layout_constraintTop_toTopOf="@+id/imageView12" />
 
     <TextView
         android:id="@+id/T_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
         android:gravity="center_vertical"
         android:text="第5回レポート"
         android:textColor="#494949"
         android:textSize="10pt"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/SUB_4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button10"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="@+id/imageView14"
+        app:layout_constraintTop_toTopOf="@+id/button10" />
 
     <TextView
         android:id="@+id/SUB_1"
@@ -274,10 +216,8 @@
         android:layout_height="wrap_content"
         android:text="[2020 秋セメスター] 心理学入門(101)"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/END_1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/T_1"
+        app:layout_constraintTop_toBottomOf="@+id/T_1" />
 
     <TextView
         android:id="@+id/SUB_2"
@@ -285,10 +225,8 @@
         android:layout_height="wrap_content"
         android:text="[2020 秋セメスター] 心理学入門(101)"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/END_2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/T_2"
+        app:layout_constraintTop_toBottomOf="@+id/T_2" />
 
     <TextView
         android:id="@+id/SUB_3"
@@ -296,10 +234,8 @@
         android:layout_height="wrap_content"
         android:text="[2020 秋セメスター] 心理学入門(101)"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/END_3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/T_3"
+        app:layout_constraintTop_toBottomOf="@+id/T_3" />
 
     <TextView
         android:id="@+id/SUB_4"
@@ -307,10 +243,8 @@
         android:layout_height="wrap_content"
         android:text="[2020 秋セメスター] 心理学入門(101)"
         android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.176"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="356dp" />
+        app:layout_constraintStart_toStartOf="@+id/T_5"
+        app:layout_constraintTop_toBottomOf="@+id/T_5" />
 
     <TextView
         android:id="@+id/SUB_5"
@@ -318,71 +252,57 @@
         android:layout_height="wrap_content"
         android:text="[2020 秋セメスター] 心理学入門(101)"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/END_4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/T_4"
+        app:layout_constraintTop_toBottomOf="@+id/T_4" />
 
     <TextView
         android:id="@+id/END_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="8dp"
         android:text="受付終了日時：2020-11-30"
         android:textColor="#E80000"
-        app:layout_constraintBottom_toBottomOf="@+id/button3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
-        app:layout_constraintStart_toStartOf="@+id/imageView13" />
+        app:layout_constraintStart_toStartOf="@+id/SUB_1"
+        app:layout_constraintTop_toBottomOf="@+id/SUB_1" />
 
     <TextView
         android:id="@+id/END_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="8dp"
         android:text="受付終了日時：2020-11-30"
         android:textColor="#E80000"
-        app:layout_constraintBottom_toBottomOf="@+id/button5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
-        app:layout_constraintStart_toStartOf="@+id/imageView13" />
+        app:layout_constraintStart_toStartOf="@+id/SUB_2"
+        app:layout_constraintTop_toBottomOf="@+id/SUB_2" />
 
     <TextView
         android:id="@+id/END_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginTop="8dp"
         android:text="受付終了日時：2020-11-30"
         android:textColor="#E80000"
-        app:layout_constraintBottom_toBottomOf="@+id/button8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
-        app:layout_constraintStart_toStartOf="@+id/imageView13" />
+        app:layout_constraintStart_toStartOf="@+id/SUB_3"
+        app:layout_constraintTop_toBottomOf="@+id/SUB_3" />
 
     <TextView
         android:id="@+id/END_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginTop="8dp"
         android:text="受付終了日時：2020-11-30"
         android:textColor="#E80000"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
-        app:layout_constraintStart_toStartOf="@+id/imageView13" />
+        app:layout_constraintStart_toStartOf="@+id/SUB_5"
+        app:layout_constraintTop_toBottomOf="@+id/SUB_5" />
 
     <TextView
         android:id="@+id/END_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="8dp"
         android:text="受付終了日時：2020-11-30"
         android:textColor="#E80000"
-        app:layout_constraintBottom_toBottomOf="@+id/button10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
-        app:layout_constraintStart_toStartOf="@+id/imageView13"
-        app:layout_constraintTop_toBottomOf="@+id/SUB_4"
-        app:layout_constraintVertical_bias="0.996" />
+        app:layout_constraintStart_toStartOf="@+id/SUB_4"
+        app:layout_constraintTop_toBottomOf="@+id/SUB_4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
