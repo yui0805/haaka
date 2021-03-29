@@ -80,11 +80,11 @@ class page5 : AppCompatActivity() {
             intent.putExtra("date", URL_4)
             startActivity(intent)
         }
-        event_5.setOnClickListener{
-            intent = Intent(this@page5,page8::class.java)
-            intent.putExtra("date", URL_5)
-            startActivity(intent)
-        }
+//        event_5.setOnClickListener{
+//            intent = Intent(this@page5,page8::class.java)
+//            intent.putExtra("date", URL_5)
+//            startActivity(intent)
+//        }
 
 
         plan_1.setOnClickListener{
@@ -519,7 +519,7 @@ class page5 : AppCompatActivity() {
             super.onPostExecute(result)
             if (result == null) return
 
-            event_5.text = result
+//            event_5.text = result
         }
     }
 
