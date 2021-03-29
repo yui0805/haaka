@@ -3,7 +3,7 @@ package com.example.myapplication
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_page8.*
+import kotlinx.android.synthetic.main.activity_page9.*
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.BufferedReader
@@ -13,10 +13,10 @@ import java.net.HttpURLConnection
 import java.net.MalformedURLException
 import java.net.URL
 
-class page8 : AppCompatActivity() {
+class page9 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_page8)
+        setContentView(R.layout.activity_page9)
 
         val bundle = intent.extras
         val date_data: String? = bundle?.getString("date")
