@@ -41,10 +41,10 @@ class page9 : AppCompatActivity() {
         HitAPITask4().execute(str_url )
         HitAPITask5().execute(str_url)
 
-        button.setOnClickListener {
-            intent = Intent(this@page9,page8::class.java)
-            startActivity(intent)
-        }
+//        button.setOnClickListener {
+//            intent = Intent(this@page9,page8::class.java)
+//            startActivity(intent)
+//        }
 
 
 

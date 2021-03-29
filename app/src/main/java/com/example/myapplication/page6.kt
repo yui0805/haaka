@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -34,6 +35,10 @@ class page6 : AppCompatActivity() {
         HitAPITask4().execute(date_data)
         HitAPITask5().execute(date_data)
 
+        button100.setOnClickListener {
+            intent = Intent(this@page6,page9::class.java)
+            startActivity(intent)
+        }
     }
 
 
