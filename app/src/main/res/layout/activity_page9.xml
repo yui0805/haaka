@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".page9">
 
-    <Button
-        android:id="@+id/button_openpage9frompage8"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:background="#0000"
-        app:backgroundTint="#00FFFFFF"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="0dp"
@@ -29,18 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:titleTextColor="#FFFFFF" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="編集"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@id/button_openpage9frompage8"
-        app:layout_constraintEnd_toEndOf="@+id/button_openpage9frompage8"
-        app:layout_constraintStart_toStartOf="@+id/button_openpage9frompage8"
-        app:layout_constraintTop_toTopOf="@+id/button_openpage9frompage8" />
 
     <TextView
         android:id="@+id/textView21"
