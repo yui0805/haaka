@@ -59,24 +59,24 @@ class page5 : AppCompatActivity() {
 
 
         event_1.setOnClickListener{
-            intent = Intent(this@page5,page8::class.java)
+            intent = Intent(this@page5,page9::class.java)
             intent.putExtra("date", URL_1)
             startActivity(intent)
 
         }
         event_2.setOnClickListener{
-            intent = Intent(this@page5,page8::class.java)
+            intent = Intent(this@page5,page9::class.java)
             intent.putExtra("date", URL_2)
             startActivity(intent)
 
         }
         event_3.setOnClickListener{
-            intent = Intent(this@page5,page8::class.java)
+            intent = Intent(this@page5,page9::class.java)
             intent.putExtra("date", URL_3)
             startActivity(intent)
         }
         event_4.setOnClickListener{
-            intent = Intent(this@page5,page8::class.java)
+            intent = Intent(this@page5,page9::class.java)
             intent.putExtra("date", URL_4)
             startActivity(intent)
         }
