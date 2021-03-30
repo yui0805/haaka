@@ -11,7 +11,15 @@
         android:roundIcon="@drawable/iconhakadorikun"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+<<<<<<< HEAD
+        <activity android:name=".page8"></activity>
+        <activity android:name=".page5_re" />
+        <activity android:name=".MyViewModel" />
+        <activity android:name=".Util" />
+        <activity android:name=".IApiService" />
+=======
         <activity android:name=".page5_re"></activity>
+>>>>>>> 1510a70a5f5a881cdb5ee6f55487c95d5d7e6c3e
         <activity android:name=".Post_test" />
         <activity android:name=".MainActivity" />
         <activity android:name=".page4" />
@@ -20,7 +28,7 @@
         <activity android:name=".memotest" />
         <activity android:name=".page6" />
         <activity android:name=".page7" />
-        <activity android:name=".page8" />
+        <activity android:name=".page9" />
         <activity android:name=".page5" />
         <activity android:name=".home1" />
         <activity android:name=".yuipi" />
