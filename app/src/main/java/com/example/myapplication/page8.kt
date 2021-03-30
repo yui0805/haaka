@@ -10,6 +10,11 @@ class page8 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page8)
 
+        button_openpage9frompage8.setOnClickListener{
+            intent = Intent(this@page8,page9::class.java)
+            startActivity(intent)
+        }
+
 
 
 

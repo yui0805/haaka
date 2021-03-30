@@ -32,10 +32,10 @@ class page6 : AppCompatActivity() {
         HitAPITask4().execute(date_data)
         HitAPITask5().execute(date_data)
 
-        button_openpage9.setOnClickListener {
-            intent = Intent(this@page6,page9::class.java)
-            startActivity(intent)
-        }
+//        button_openpage9.setOnClickListener {
+//            intent = Intent(this@page6,page9::class.java)
+//            startActivity(intent)
+//        }
     }
 
 

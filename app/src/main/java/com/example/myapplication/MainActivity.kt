@@ -2,20 +2,11 @@ package com.example.myapplication
 
 
 import android.content.Intent
-import android.os.AsyncTask
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.button
+import kotlinx.android.synthetic.main.activity_main.button_openpage9frompage8
 import kotlinx.android.synthetic.main.activity_page6.*
-import org.json.JSONException
-import org.json.JSONObject
-import java.io.BufferedReader
-import java.io.IOException
-import java.io.InputStreamReader
-import java.net.HttpURLConnection
-import java.net.MalformedURLException
-import java.net.URL
 
 
 class MainActivity : AppCompatActivity() {
@@ -144,7 +135,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        button.setOnClickListener {
+        button_openpage9frompage8.setOnClickListener {
             val intent = Intent(this@MainActivity, page6::class.java)
             startActivity(intent)
         }
